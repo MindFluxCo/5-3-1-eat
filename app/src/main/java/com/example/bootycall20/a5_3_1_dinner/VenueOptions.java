@@ -24,14 +24,12 @@ import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 public class VenueOptions extends AppCompatActivity implements View.OnClickListener {
 
-    public String userKey;
-  
     public static Boolean isChoice1Clicked = false;
     public static Boolean isChoice2Clicked = false;
     public static Boolean isChoice3Clicked = false;
     public static Boolean isChoice4Clicked = false;
     public static Boolean isChoice5Clicked = false;
-  
+    public String userKey;
     public int itemsTouched;
   
     TextView tvChoice1;
@@ -155,10 +153,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
     private void buttonsArePressed(View view) {
 
-        String logMessage = "Clicked: " + view.getId();
-
-        view.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        Toast.makeText(VenueOptions.this, logMessage, Toast.LENGTH_SHORT).show();
+        view.setBackgroundColor(getResources().getColor(R.color.primary));
         itemsTouched++;
     }
 
