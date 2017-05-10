@@ -24,18 +24,22 @@ import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 public class VenueOptions extends AppCompatActivity implements View.OnClickListener {
 
+    public String userKey;
+  
     public static Boolean isChoice1Clicked = false;
     public static Boolean isChoice2Clicked = false;
     public static Boolean isChoice3Clicked = false;
     public static Boolean isChoice4Clicked = false;
     public static Boolean isChoice5Clicked = false;
-    public String userKey;
+  
     public int itemsTouched;
+  
     TextView tvChoice1;
     TextView tvChoice2;
     TextView tvChoice3;
     TextView tvChoice4;
     TextView tvChoice5;
+  
     private DatabaseReference mFirebaseDatabase;
 
     @Override
