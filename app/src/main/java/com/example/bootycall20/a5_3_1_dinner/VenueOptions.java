@@ -1,10 +1,8 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -27,15 +25,13 @@ import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 public class VenueOptions extends AppCompatActivity implements View.OnTouchListener{
 
-    private DatabaseReference mFirebaseDatabase;
     public String userKey;
-
     TextView tvChoice1;
     TextView tvChoice2;
     TextView tvChoice3;
     TextView tvChoice4;
     TextView tvChoice5;
-
+    private DatabaseReference mFirebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +100,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnTouchListe
             if (v == tvChoice1){
 
                 Toast.makeText(VenueOptions.this, "Clicked 1", Toast.LENGTH_SHORT).show();
-                v.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                v.setBackgroundColor(getResources().getColor(R.color.primary));
                 itemsTouched++;
 
             }
