@@ -140,7 +140,7 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
 
         String logMessage = "Clicked: " + view.getId();
 
-        view.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        view.setBackgroundColor(getResources().getColor(R.color.primary));
         Toast.makeText(UpdatedVenues.this, logMessage, Toast.LENGTH_SHORT).show();
         itemsTouched++;
     }

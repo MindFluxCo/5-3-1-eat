@@ -11,8 +11,8 @@
         android:clickable="true"
         android:contentDescription="@string/venue_option_1"
         android:elevation="13dp"
-        android:padding="30dp"
-        android:text="@string/venue_option_1" />
+        android:hint="@string/venue_option_1"
+        android:padding="30dp" />
 
     <TextView
         android:id="@+id/choice2"
@@ -20,8 +20,8 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_2"
-        android:padding="30dp"
-        android:text="@string/venue_option_2" />
+        android:hint="@string/venue_option_2"
+        android:padding="30dp" />
 
     <TextView
         android:id="@+id/choice3"
@@ -29,8 +29,8 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_3"
-        android:padding="30dp"
-        android:text="@string/venue_option_3" />
+        android:hint="@string/venue_option_3"
+        android:padding="30dp" />
 
     <TextView
         android:id="@+id/choice4"
@@ -38,8 +38,8 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_4"
-        android:padding="30dp"
-        android:text="@string/venue_option_4" />
+        android:hint="@string/venue_option_4"
+        android:padding="30dp" />
 
     <TextView
         android:id="@+id/choice5"
@@ -47,8 +47,8 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_5"
-        android:padding="30dp"
-        android:text="@string/venue_option_5" />
+        android:hint="@string/venue_option_5"
+        android:padding="30dp" />
 
     <Button
         android:id="@+id/button2"
