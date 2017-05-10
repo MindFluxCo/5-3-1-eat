@@ -1,13 +1,10 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,17 +22,21 @@ import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
  * Created by BootyCall2.0 on 3/14/2017.
  */
 
-public class VenueOptions extends AppCompatActivity implements View.OnTouchListener{
+public class VenueOptions extends AppCompatActivity implements View.OnClickListener {
 
-    private DatabaseReference mFirebaseDatabase;
+    public static Boolean isChoice1Clicked = false;
+    public static Boolean isChoice2Clicked = false;
+    public static Boolean isChoice3Clicked = false;
+    public static Boolean isChoice4Clicked = false;
+    public static Boolean isChoice5Clicked = false;
     public String userKey;
-
+    public int itemsTouched;
     TextView tvChoice1;
     TextView tvChoice2;
     TextView tvChoice3;
     TextView tvChoice4;
     TextView tvChoice5;
-
+    private DatabaseReference mFirebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,8 @@ public class VenueOptions extends AppCompatActivity implements View.OnTouchListe
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
         userKey = mChoicesId;
 
+        itemsTouched = 0;
+
 
         tvChoice1 = (TextView) findViewById(R.id.choice1);
         tvChoice2 = (TextView) findViewById(R.id.choice2);
@@ -52,11 +55,11 @@ public class VenueOptions extends AppCompatActivity implements View.OnTouchListe
         tvChoice4 = (TextView) findViewById(R.id.choice4);
         tvChoice5 = (TextView) findViewById(R.id.choice5);
 
-        tvChoice1.setOnTouchListener(this);
-        tvChoice2.setOnTouchListener(this);
-        tvChoice3.setOnTouchListener(this);
-        tvChoice4.setOnTouchListener(this);
-        tvChoice5.setOnTouchListener(this);
+        tvChoice1.setOnClickListener(this);
+        tvChoice2.setOnClickListener(this);
+        tvChoice3.setOnClickListener(this);
+        tvChoice4.setOnClickListener(this);
+        tvChoice5.setOnClickListener(this);
 
     }
 
@@ -83,65 +86,41 @@ public class VenueOptions extends AppCompatActivity implements View.OnTouchListe
 
             }
         });
-
-        tvChoice1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(VenueOptions.this, "Clicked 1", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
     }
 
+
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
+    public void onClick(View v) {
 
-        int itemsTouched = 0;
+        if (itemsTouched != 3) {
 
-        while (itemsTouched != 3){
             if (v == tvChoice1){
-
-                Toast.makeText(VenueOptions.this, "Clicked 1", Toast.LENGTH_SHORT).show();
-                v.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                itemsTouched++;
+                buttonsArePressed(tvChoice1);
+                isChoice1Clicked = true;
+            }
+            if (v == tvChoice2) {
+                buttonsArePressed(tvChoice2);
+                isChoice2Clicked = true;
+            }
+            if (v == tvChoice3) {
+                buttonsArePressed(tvChoice3);
+                isChoice3Clicked = true;
+            }
+            if (v == tvChoice4) {
+                buttonsArePressed(tvChoice4);
+                isChoice4Clicked = true;
+            }
+            if (v == tvChoice5) {
+                buttonsArePressed(tvChoice5);
+                isChoice5Clicked = true;
 
             }
 
-            if (v == tvChoice2){
+        } else if (itemsTouched == 3) {
 
-                Toast.makeText(VenueOptions.this, "Clicked 2", Toast.LENGTH_SHORT).show();
-                itemsTouched++;
-
-            }
-
-            if (v == tvChoice3){
-
-                Toast.makeText(VenueOptions.this, "Clicked 3", Toast.LENGTH_SHORT).show();
-                itemsTouched++;
-
-            }
-
-            if (v == tvChoice4){
-
-                Toast.makeText(VenueOptions.this, "Clicked 4", Toast.LENGTH_SHORT).show();
-                itemsTouched++;
-
-            }
-
-            if (v == tvChoice5){
-
-                Toast.makeText(VenueOptions.this, "Clicked 5", Toast.LENGTH_SHORT).show();
-                itemsTouched++;
-
-            }
-
+            Toast.makeText(VenueOptions.this, "Hit the button to move on!", Toast.LENGTH_SHORT).show();
         }
 
-        Toast.makeText(VenueOptions.this, "loop ended", Toast.LENGTH_SHORT).show();
-
-        return true;
     }
 
     @Override
@@ -168,6 +147,15 @@ public class VenueOptions extends AppCompatActivity implements View.OnTouchListe
     public void venueOptions5(View view) {
         Intent intent = new Intent(this, UpdatedVenues.class);
         startActivity(intent);
+    }
+
+    private void buttonsArePressed(View view) {
+
+        String logMessage = "Clicked: " + view.getId();
+
+        view.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        Toast.makeText(VenueOptions.this, logMessage, Toast.LENGTH_SHORT).show();
+        itemsTouched++;
     }
 
 }
