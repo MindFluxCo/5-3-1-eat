@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "874978199901",
+    "firebase_url": "https://dinner-f4df2.firebaseio.com",
+    "project_id": "dinner-f4df2",
+    "storage_bucket": "dinner-f4df2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874978199901:android:447fbb1960c66d7d",
+        "android_client_info": {
+          "package_name": "com.example.bootycall20.a5_3_1_dinner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874978199901-c0qsmhcig7u0pg7rslabd6u24ukrj7vf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bootycall20.a5_3_1_dinner",
+            "certificate_hash": "b6014ea73f678c057de0e7d88f41e0d16784268a"
+          }
+        },
+        {
+          "client_id": "874978199901-bo6ju9sjrnohbtb7idfdm6ni676qp4nv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqR83IUvp967ZWD8QIAZdx_0UIYuSnUBc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874978199901-bo6ju9sjrnohbtb7idfdm6ni676qp4nv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
