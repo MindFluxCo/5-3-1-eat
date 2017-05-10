@@ -4,36 +4,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ToggleButton
-
-        android:id="@+id/venueButton1"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/choice1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Whats going wrong" />
+        android:padding="30dp"
+        android:clickable="true"
+        android:text="this is option 1"/>
 
-    <ToggleButton
-        android:id="@+id/venueButton2"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/choice2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton" />
+        android:padding="30dp"
+        android:clickable="true"
+        android:text="this is option 2"/>
 
-    <ToggleButton
-        android:id="@+id/venueButton3"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/choice3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton" />
+        android:padding="30dp"
+        android:clickable="true"
+        android:text="this is option 3"/>
 
-    <ToggleButton
-        android:id="@+id/venueButton4"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/choice4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton" />
+        android:padding="30dp"
+        android:clickable="true"
+        android:text="this is option 4"/>
 
-    <ToggleButton
-        android:id="@+id/venueButton5"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/choice5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleButton" />
+        android:padding="30dp"
+        android:clickable="true"
+        android:text="this is option 5"/>
 
     <Button
         android:id="@+id/button2"

@@ -1,58 +1,147 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ToggleButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
+
 
 /**
  * Created by BootyCall2.0 on 3/14/2017.
  */
 
-public class VenueOptions extends AppCompatActivity {
+public class VenueOptions extends AppCompatActivity implements View.OnTouchListener{
 
-    public static List<String> userInput;
-    String venueText;
-    EditText venueOption1;
-    EditText venueOption2;
-    EditText venueOption3;
-    EditText venueOption4;
-    EditText venueOption5;
+    private DatabaseReference mFirebaseDatabase;
+    public String userKey;
+
+    TextView tvChoice1;
+    TextView tvChoice2;
+    TextView tvChoice3;
+    TextView tvChoice4;
+    TextView tvChoice5;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_options_display);
 
-        userInput = new ArrayList(4);
-        venueText = new String();
+        mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
+        userKey = mChoicesId;
 
-        venueOption1 = (EditText) findViewById(R.id.venueOption1);
-        venueOption2 = (EditText) findViewById(R.id.venueOption2);
-        venueOption3 = (EditText) findViewById(R.id.venueOption3);
-        venueOption4 = (EditText) findViewById(R.id.venueOption4);
-        venueOption5 = (EditText) findViewById(R.id.venueOption5);
 
-        ToggleButton venueButton1 = (ToggleButton) findViewById(R.id.venueButton1);
-        ToggleButton venueButton2 = (ToggleButton) findViewById(R.id.venueButton2);
-        ToggleButton venueButton3 = (ToggleButton) findViewById(R.id.venueButton3);
-        ToggleButton venueButton4 = (ToggleButton) findViewById(R.id.venueButton4);
-        ToggleButton venueButton5 = (ToggleButton) findViewById(R.id.venueButton5);
+        tvChoice1 = (TextView) findViewById(R.id.choice1);
+        tvChoice2 = (TextView) findViewById(R.id.choice2);
+        tvChoice3 = (TextView) findViewById(R.id.choice3);
+        tvChoice4 = (TextView) findViewById(R.id.choice4);
+        tvChoice5 = (TextView) findViewById(R.id.choice5);
 
-        venueText = userInput.get(0);
-        venueButton1.setTextOn(venueText);
-        venueButton2.setTextOn(venueText);
-        venueButton3.setTextOn(venueText);
-        venueButton4.setTextOn(venueText);
-        venueButton5.setTextOn(venueText);
+        tvChoice1.setOnTouchListener(this);
+        tvChoice2.setOnTouchListener(this);
+        tvChoice3.setOnTouchListener(this);
+        tvChoice4.setOnTouchListener(this);
+        tvChoice5.setOnTouchListener(this);
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        mFirebaseDatabase.child("choices").child(userKey).addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ChoicesObject choices = dataSnapshot.getValue(ChoicesObject.class);
+
+                tvChoice1.setText(choices.choice1);
+                tvChoice2.setText(choices.choice2);
+                tvChoice3.setText(choices.choice3);
+                tvChoice4.setText(choices.choice4);
+                tvChoice5.setText(choices.choice5);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        tvChoice1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(VenueOptions.this, "Clicked 1", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+
+        int itemsTouched = 0;
+
+        while (itemsTouched != 3){
+            if (v == tvChoice1){
+
+                Toast.makeText(VenueOptions.this, "Clicked 1", Toast.LENGTH_SHORT).show();
+                v.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                itemsTouched++;
+
+            }
+
+            if (v == tvChoice2){
+
+                Toast.makeText(VenueOptions.this, "Clicked 2", Toast.LENGTH_SHORT).show();
+                itemsTouched++;
+
+            }
+
+            if (v == tvChoice3){
+
+                Toast.makeText(VenueOptions.this, "Clicked 3", Toast.LENGTH_SHORT).show();
+                itemsTouched++;
+
+            }
+
+            if (v == tvChoice4){
+
+                Toast.makeText(VenueOptions.this, "Clicked 4", Toast.LENGTH_SHORT).show();
+                itemsTouched++;
+
+            }
+
+            if (v == tvChoice5){
+
+                Toast.makeText(VenueOptions.this, "Clicked 5", Toast.LENGTH_SHORT).show();
+                itemsTouched++;
+
+            }
+
+        }
+
+        Toast.makeText(VenueOptions.this, "loop ended", Toast.LENGTH_SHORT).show();
+
+        return true;
     }
 
     @Override
