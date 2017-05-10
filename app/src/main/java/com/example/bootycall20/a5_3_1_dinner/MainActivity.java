@@ -3,31 +3,39 @@ package com.example.bootycall20.a5_3_1_dinner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 public class MainActivity extends AppCompatActivity {
-
 
     EditText venueOption1;
     EditText venueOption2;
     EditText venueOption3;
     EditText venueOption4;
     EditText venueOption5;
-
     Button UpdateVenueButton;
-
-
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        loads test adds into AdView
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
+
+//        additional code to attatch listener to AdView
+        //        mAdView.setAdListener(new ToastAdListener(this));
 
         venueOption1 = (EditText) findViewById(R.id.venueOption1);
         venueOption2 = (EditText) findViewById(R.id.venueOption2);
