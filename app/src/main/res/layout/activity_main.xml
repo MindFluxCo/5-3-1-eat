@@ -20,8 +20,6 @@
         android:layout_marginTop="30dp"
         android:text="Enter your Favorite Venues to Start 5-3-1"
         android:textAppearance="@style/TextAppearance.AppCompat" />
-
-
     <TextView
         android:id="@+id/editChoice1"
         android:layout_width="match_parent"
