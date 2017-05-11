@@ -3,7 +3,6 @@ package com.example.bootycall20.a5_3_1_dinner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +14,8 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,16 +37,9 @@ public class MainActivity extends AppCompatActivity {
     public Boolean isChoice3Clicked = false;
     public Boolean isChoice4Clicked = false;
     public Boolean isChoice5Clicked = false;
-    //    @BindView(R.id.venueOption1)
-//    EditText venueOption1;
-//    @BindView(R.id.venueOption2)
-//    EditText venueOption2;
-//    @BindView(R.id.venueOption3)
-//    EditText venueOption3;
-//    @BindView(R.id.venueOption4)
-//    EditText venueOption4;
-//    @BindView(R.id.venueOption5)
-//    EditText venueOption5;
+  
+    private AdView mAdView;
+
     @BindView(R.id.editChoice1)
     TextView editChoice1;
     @BindView(R.id.editChoice2)
@@ -57,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.editChoice5)
     TextView editChoice5;
     Button UpdateVenueButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,6 +161,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        loads test adds into AdView
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
+
+//        additional code to attatch listener to AdView
+        //        mAdView.setAdListener(new ToastAdListener(this));
 
         UpdateVenueButton = (Button) findViewById(R.id.button);
 

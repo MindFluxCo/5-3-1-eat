@@ -9,4 +9,7 @@
     <string name="venue_option_4">Venue option 4</string>
     <string name="venue_option_5">Venue option 5</string>
     <string name="update_venues">Update Venues</string>
+
+    <string name="banner_ad">Banner Ad</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>

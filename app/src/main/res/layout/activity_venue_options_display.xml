@@ -16,6 +16,7 @@
         android:textSize="24sp"
         android:visibility="invisible" />
 
+
     <TextView
         android:id="@+id/choice2"
         android:layout_width="match_parent"
@@ -28,6 +29,7 @@
         android:textSize="24sp"
         android:visibility="invisible" />
 
+
     <TextView
         android:id="@+id/choice3"
         android:layout_width="match_parent"
@@ -39,6 +41,7 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:visibility="invisible" />
+
 
     <TextView
         android:id="@+id/choice4"
@@ -63,6 +66,7 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:visibility="invisible" />
+
 
     <Button
         android:id="@+id/button2"
