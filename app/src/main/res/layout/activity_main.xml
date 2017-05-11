@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.bootycall20.a5_3_1_dinner.MainActivity">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -20,78 +21,100 @@
         android:text="Enter your Favorite Venues to Start 5-3-1"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
-    <EditText
-        android:id="@+id/venueOption1"
-        android:layout_width="wrap_content"
+
+    <TextView
+        android:id="@+id/editChoice1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
-        android:ems="10"
-        android:hint="@string/venue_option_1"
-        android:inputType="text" />
+        android:clickable="true"
+        android:contentDescription="@string/venue_option_4"
+        android:elevation="13dp"
+        android:padding="20dp"
+        android:text="Pick One"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/venueOption2"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/editChoice2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/venueOption1"
-        android:ems="10"
-        android:hint="@string/venue_option_2"
-        android:inputType="text" />
+        android:layout_below="@+id/editChoice1"
+        android:clickable="true"
+        android:contentDescription="@string/venue_option_4"
+        android:elevation="13dp"
+        android:padding="20dp"
+        android:text="Pick Two"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/venueOption3"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/editChoice3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/venueOption2"
-        android:ems="10"
-        android:hint="@string/venue_option_3"
-        android:inputType="text" />
+        android:layout_below="@+id/editChoice2"
+        android:clickable="true"
+        android:contentDescription="@string/venue_option_4"
+        android:elevation="13dp"
+        android:padding="20dp"
+        android:text="Pick Three"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/venueOption4"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/editChoice4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/venueOption3"
-        android:ems="10"
-        android:hint="@string/venue_option_4"
-        android:inputType="text" />
+        android:layout_below="@+id/editChoice3"
+        android:clickable="true"
+        android:contentDescription="@string/venue_option_4"
+        android:elevation="13dp"
+        android:padding="20dp"
+        android:text="Pick Four"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/venueOption5"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/editChoice5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/venueOption4"
-        android:ems="10"
-        android:hint="@string/venue_option_5"
-        android:inputType="text" />
+        android:layout_below="@+id/editChoice4"
+        android:clickable="true"
+        android:contentDescription="@string/venue_option_4"
+        android:elevation="13dp"
+        android:padding="20dp"
+        android:text="Pick Five"
+        android:textAlignment="center"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/venueOption5"
+        android:layout_below="@+id/editChoice5"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:elevation="10dp"
         android:hint="Where to Eat?" />
+
 </RelativeLayout>
