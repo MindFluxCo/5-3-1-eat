@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -13,6 +14,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
@@ -30,11 +34,19 @@ public class FinalVenue extends AppCompatActivity {
     public Boolean isFinalChoice4;
     public Boolean isFinalChoice5;
 
+    @BindView(R.id.choice1)
     TextView tvChoice1;
+    @BindView(R.id.choice2)
     TextView tvChoice2;
+    @BindView(R.id.choice3)
     TextView tvChoice3;
+    @BindView(R.id.choice4)
     TextView tvChoice4;
+    @BindView(R.id.choice5)
     TextView tvChoice5;
+    @BindView(R.id.button2)
+    Button button2;
+
 
     private DatabaseReference mFirebaseDatabase;
 
@@ -42,17 +54,13 @@ public class FinalVenue extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_options_display);
+        ButterKnife.bind(this);
+
+        tvChoice3.setVisibility(View.VISIBLE);
+
 
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
         userKey = mChoicesId;
-
-
-        tvChoice1 = (TextView) findViewById(R.id.choice1);
-        tvChoice2 = (TextView) findViewById(R.id.choice2);
-        tvChoice3 = (TextView) findViewById(R.id.choice3);
-        tvChoice4 = (TextView) findViewById(R.id.choice4);
-        tvChoice5 = (TextView) findViewById(R.id.choice5);
-
 
     }
 
@@ -81,20 +89,28 @@ public class FinalVenue extends AppCompatActivity {
 
 
                 if (isFinalChoice1) {
-                    tvChoice1.setText(choices.choice1);
+                    tvChoice3.setText(choices.choice1);
+                    tvChoice3.setTextSize(100);
                 }
                 if (isFinalChoice2) {
-                    tvChoice2.setText(choices.choice2);
+                    tvChoice3.setText(choices.choice2);
+                    tvChoice3.setTextSize(100);
                 }
                 if (isFinalChoice3) {
                     tvChoice3.setText(choices.choice3);
+                    tvChoice3.setTextSize(100);
                 }
                 if (isFinalChoice4) {
-                    tvChoice4.setText(choices.choice4);
+                    tvChoice3.setText(choices.choice4);
+                    tvChoice3.setTextSize(100);
                 }
                 if (isFinalChoice5) {
-                    tvChoice5.setText(choices.choice5);
+                    tvChoice3.setText(choices.choice5);
+                    tvChoice3.setTextSize(50);
                 }
+
+                button2.setVisibility(View.INVISIBLE);
+                button2.setClickable(false);
 
             }
 

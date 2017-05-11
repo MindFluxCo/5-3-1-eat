@@ -3,37 +3,36 @@ package com.example.bootycall20.a5_3_1_dinner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends AppCompatActivity {
 
-
+    @BindView(R.id.venueOption1)
     EditText venueOption1;
+    @BindView(R.id.venueOption2)
     EditText venueOption2;
+    @BindView(R.id.venueOption3)
     EditText venueOption3;
+    @BindView(R.id.venueOption4)
     EditText venueOption4;
+    @BindView(R.id.venueOption5)
     EditText venueOption5;
 
     Button UpdateVenueButton;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        venueOption1 = (EditText) findViewById(R.id.venueOption1);
-        venueOption2 = (EditText) findViewById(R.id.venueOption2);
-        venueOption3 = (EditText) findViewById(R.id.venueOption3);
-        venueOption4 = (EditText) findViewById(R.id.venueOption4);
-        venueOption5 = (EditText) findViewById(R.id.venueOption5);
+        ButterKnife.bind(this);
 
 
         UpdateVenueButton = (Button) findViewById(R.id.button);

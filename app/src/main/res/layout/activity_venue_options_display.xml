@@ -11,7 +11,10 @@
         android:clickable="true"
         android:contentDescription="@string/venue_option_1"
         android:elevation="13dp"
-        android:padding="30dp" />
+        android:padding="30dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/choice2"
@@ -20,7 +23,10 @@
         android:clickable="true"
         android:contentDescription="@string/venue_option_2"
         android:elevation="13dp"
-        android:padding="30dp" />
+        android:padding="30dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/choice3"
@@ -29,7 +35,10 @@
         android:clickable="true"
         android:contentDescription="@string/venue_option_3"
         android:elevation="13dp"
-        android:padding="30dp" />
+        android:padding="30dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/choice4"
@@ -38,7 +47,10 @@
         android:clickable="true"
         android:contentDescription="@string/venue_option_4"
         android:elevation="13dp"
-        android:padding="30dp" />
+        android:padding="30dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/choice5"
@@ -47,7 +59,10 @@
         android:clickable="true"
         android:contentDescription="@string/venue_option_5"
         android:elevation="13dp"
-        android:padding="30dp" />
+        android:padding="30dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/button2"

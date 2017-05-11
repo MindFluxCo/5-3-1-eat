@@ -15,6 +15,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 
@@ -31,31 +34,39 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
     public static Boolean isChoice5Clicked = false;
     public String userKey;
     public int itemsTouched;
-  
+
+
+    @BindView(R.id.choice1)
     TextView tvChoice1;
+    @BindView(R.id.choice2)
     TextView tvChoice2;
+    @BindView(R.id.choice3)
     TextView tvChoice3;
+    @BindView(R.id.choice4)
     TextView tvChoice4;
+    @BindView(R.id.choice5)
     TextView tvChoice5;
-  
+
+
     private DatabaseReference mFirebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_options_display);
+        ButterKnife.bind(this);
+
+        tvChoice1.setVisibility(View.VISIBLE);
+        tvChoice2.setVisibility(View.VISIBLE);
+        tvChoice3.setVisibility(View.VISIBLE);
+        tvChoice4.setVisibility(View.VISIBLE);
+        tvChoice5.setVisibility(View.VISIBLE);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
         userKey = mChoicesId;
 
         itemsTouched = 0;
 
-
-        tvChoice1 = (TextView) findViewById(R.id.choice1);
-        tvChoice2 = (TextView) findViewById(R.id.choice2);
-        tvChoice3 = (TextView) findViewById(R.id.choice3);
-        tvChoice4 = (TextView) findViewById(R.id.choice4);
-        tvChoice5 = (TextView) findViewById(R.id.choice5);
 
         tvChoice1.setOnClickListener(this);
         tvChoice2.setOnClickListener(this);
