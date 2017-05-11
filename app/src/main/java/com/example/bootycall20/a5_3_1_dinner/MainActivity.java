@@ -7,26 +7,159 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText venueOption1;
-    EditText venueOption2;
-    EditText venueOption3;
-    EditText venueOption4;
-    EditText venueOption5;
-    Button UpdateVenueButton;
+    public int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
+    public String mPlaceName;
+    public String mPlaceAdress;
+    public String choice1;
+    public String choice2;
+    public String choice3;
+    public String choice4;
+    public String choice5;
+    public Boolean isChoice1Clicked = false;
+    public Boolean isChoice2Clicked = false;
+    public Boolean isChoice3Clicked = false;
+    public Boolean isChoice4Clicked = false;
+    public Boolean isChoice5Clicked = false;
+  
     private AdView mAdView;
+
+    @BindView(R.id.editChoice1)
+    TextView editChoice1;
+    @BindView(R.id.editChoice2)
+    TextView editChoice2;
+    @BindView(R.id.editChoice3)
+    TextView editChoice3;
+    @BindView(R.id.editChoice4)
+    TextView editChoice4;
+    @BindView(R.id.editChoice5)
+    TextView editChoice5;
+    Button UpdateVenueButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
+        editChoice1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isChoice1Clicked = true;
+                try {
+                    Intent intent =
+                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                                    .build(MainActivity.this);
+                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+
+                } catch (GooglePlayServicesRepairableException e) {
+                    // TODO: Handle the error.
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    // TODO: Handle the error.
+                }
+            }
+        });
+
+        editChoice2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isChoice2Clicked = true;
+
+                try {
+                    Intent intent =
+                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                                    .build(MainActivity.this);
+                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+
+                } catch (GooglePlayServicesRepairableException e) {
+                    // TODO: Handle the error.
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    // TODO: Handle the error.
+                }
+
+
+            }
+        });
+
+        editChoice3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isChoice3Clicked = true;
+
+                try {
+                    Intent intent =
+                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                                    .build(MainActivity.this);
+                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+
+                } catch (GooglePlayServicesRepairableException e) {
+                    // TODO: Handle the error.
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    // TODO: Handle the error.
+                }
+
+
+            }
+        });
+
+        editChoice4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isChoice4Clicked = true;
+
+                try {
+                    Intent intent =
+                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                                    .build(MainActivity.this);
+                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+
+                } catch (GooglePlayServicesRepairableException e) {
+                    // TODO: Handle the error.
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    // TODO: Handle the error.
+                }
+
+
+            }
+        });
+
+        editChoice5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isChoice5Clicked = true;
+
+                try {
+                    Intent intent =
+                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                                    .build(MainActivity.this);
+                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+
+                } catch (GooglePlayServicesRepairableException e) {
+                    // TODO: Handle the error.
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    // TODO: Handle the error.
+                }
+
+
+            }
+        });
 
 //        loads test adds into AdView
         mAdView = (AdView) findViewById(R.id.adView);
@@ -37,24 +170,12 @@ public class MainActivity extends AppCompatActivity {
 //        additional code to attatch listener to AdView
         //        mAdView.setAdListener(new ToastAdListener(this));
 
-        venueOption1 = (EditText) findViewById(R.id.venueOption1);
-        venueOption2 = (EditText) findViewById(R.id.venueOption2);
-        venueOption3 = (EditText) findViewById(R.id.venueOption3);
-        venueOption4 = (EditText) findViewById(R.id.venueOption4);
-        venueOption5 = (EditText) findViewById(R.id.venueOption5);
-
-
         UpdateVenueButton = (Button) findViewById(R.id.button);
 
         UpdateVenueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String choice1 = venueOption1.getText().toString();
-                String choice2 = venueOption2.getText().toString();
-                String choice3 = venueOption3.getText().toString();
-                String choice4 = venueOption4.getText().toString();
-                String choice5 = venueOption5.getText().toString();
 
                 FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
@@ -90,5 +211,62 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
 
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlaceAutocomplete.getPlace(this, data);
+                mPlaceName = place.getName().toString();
+                mPlaceAdress = place.getAddress().toString();
+
+                if (isChoice1Clicked) {
+                    editChoice1.setText(mPlaceName);
+                    choice1 = mPlaceName;
+                    Log.v("Places", "Place: " + mPlaceName);
+                    Log.v("Places", "Place: " + mPlaceAdress);
+                    isChoice1Clicked = false;
+                }
+                if (isChoice2Clicked) {
+                    editChoice2.setText(mPlaceName);
+                    choice2 = mPlaceName;
+                    Log.v("Places", "Place: " + mPlaceName);
+                    Log.v("Places", "Place: " + mPlaceAdress);
+                    isChoice2Clicked = false;
+                }
+                if (isChoice3Clicked) {
+                    editChoice3.setText(mPlaceName);
+                    choice3 = mPlaceName;
+                    Log.v("Places", "Place: " + mPlaceName);
+                    Log.v("Places", "Place: " + mPlaceAdress);
+                    isChoice3Clicked = false;
+                }
+                if (isChoice4Clicked) {
+                    editChoice4.setText(mPlaceName);
+                    choice4 = mPlaceName;
+                    Log.v("Places", "Place: " + mPlaceName);
+                    Log.v("Places", "Place: " + mPlaceAdress);
+                    isChoice4Clicked = false;
+                }
+                if (isChoice5Clicked) {
+                    editChoice5.setText(mPlaceName);
+                    choice5 = mPlaceName;
+                    Log.v("Places", "Place: " + mPlaceName);
+                    Log.v("Places", "Place: " + mPlaceAdress);
+                    isChoice5Clicked = false;
+                }
+
+
+            } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
+                Status status = PlaceAutocomplete.getStatus(this, data);
+                // TODO: Handle the error.
+                Log.v("Places", status.getStatusMessage());
+
+            } else if (resultCode == RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
+        }
     }
 }

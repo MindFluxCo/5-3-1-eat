@@ -15,7 +15,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
+
 
 /**
  * Created by BootyCall2.0 on 3/14/2017.
@@ -23,36 +27,52 @@ import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 public class UpdatedVenues extends AppCompatActivity implements View.OnClickListener {
 
-    public String userKey;
-    public int itemsTouched;
+    public static Boolean isFinalChoice1 = false;
+    public static Boolean isFinalChoice2 = false;
+    public static Boolean isFinalChoice3 = false;
+    public static Boolean isFinalChoice4 = false;
+    public static Boolean isFinalChoice5 = false;
+
+
     public Boolean isChoice1Clicked;
     public Boolean isChoice2Clicked;
     public Boolean isChoice3Clicked;
     public Boolean isChoice4Clicked;
     public Boolean isChoice5Clicked;
+
+    public String userKey;
+    public int itemsTouched;
+
+    @BindView(R.id.choice1)
     TextView tvChoice1;
+    @BindView(R.id.choice2)
     TextView tvChoice2;
+    @BindView(R.id.choice3)
     TextView tvChoice3;
+    @BindView(R.id.choice4)
     TextView tvChoice4;
+    @BindView(R.id.choice5)
     TextView tvChoice5;
+
     private DatabaseReference mFirebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_venue_options_5);
+        setContentView(R.layout.activity_venue_options_display);
+        ButterKnife.bind(this);
+
+
+        tvChoice1.setVisibility(View.INVISIBLE);
+        tvChoice2.setVisibility(View.INVISIBLE);
+        tvChoice3.setVisibility(View.INVISIBLE);
+        tvChoice4.setVisibility(View.INVISIBLE);
+        tvChoice5.setVisibility(View.INVISIBLE);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
         userKey = mChoicesId;
 
         itemsTouched = 0;
-
-
-        tvChoice1 = (TextView) findViewById(R.id.choice1);
-        tvChoice2 = (TextView) findViewById(R.id.choice2);
-        tvChoice3 = (TextView) findViewById(R.id.choice3);
-        tvChoice4 = (TextView) findViewById(R.id.choice4);
-        tvChoice5 = (TextView) findViewById(R.id.choice5);
 
         tvChoice1.setOnClickListener(this);
         tvChoice2.setOnClickListener(this);
@@ -79,26 +99,42 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
                 isChoice4Clicked = VenueOptions.isChoice4Clicked;
                 isChoice5Clicked = VenueOptions.isChoice5Clicked;
 
+                tvChoice1.setClickable(false);
+                tvChoice2.setClickable(false);
+                tvChoice3.setClickable(false);
+                tvChoice4.setClickable(false);
+                tvChoice5.setClickable(false);
+
 
                 if (isChoice1Clicked) {
                     tvChoice1.setText(choices.choice1);
                     tvChoice1.setClickable(true);
+                    tvChoice1.setVisibility(View.VISIBLE);
+
                 }
                 if (isChoice2Clicked) {
                     tvChoice2.setText(choices.choice2);
-                    tvChoice1.setClickable(true);
+                    tvChoice2.setClickable(true);
+                    tvChoice2.setVisibility(View.VISIBLE);
+
                 }
                 if (isChoice3Clicked) {
                     tvChoice3.setText(choices.choice3);
-                    tvChoice1.setClickable(true);
+                    tvChoice3.setClickable(true);
+                    tvChoice3.setVisibility(View.VISIBLE);
+
                 }
                 if (isChoice4Clicked) {
                     tvChoice4.setText(choices.choice4);
-                    tvChoice1.setClickable(true);
+                    tvChoice4.setClickable(true);
+                    tvChoice4.setVisibility(View.VISIBLE);
+
                 }
                 if (isChoice5Clicked) {
                     tvChoice5.setText(choices.choice5);
-                    tvChoice1.setClickable(true);
+                    tvChoice5.setClickable(true);
+                    tvChoice5.setVisibility(View.VISIBLE);
+
                 }
 
             }
@@ -131,17 +167,14 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
         return super.onOptionsItemSelected(item);
     }
 
-    public void finalVenue(View view) {
+    public void venueOptions5(View view) {
         Intent intent = new Intent(this, FinalVenue.class);
         startActivity(intent);
     }
 
     private void buttonsArePressed(View view) {
 
-        String logMessage = "Clicked: " + view.getId();
-
         view.setBackgroundColor(getResources().getColor(R.color.primary));
-        Toast.makeText(UpdatedVenues.this, logMessage, Toast.LENGTH_SHORT).show();
         itemsTouched++;
     }
 
@@ -153,21 +186,28 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
             if (v == tvChoice1) {
                 buttonsArePressed(tvChoice1);
                 isChoice1Clicked = true;
+                isFinalChoice1 = true;
+
             }
             if (v == tvChoice2) {
                 buttonsArePressed(tvChoice2);
                 isChoice2Clicked = true;
+                isFinalChoice2 = true;
+
             }
             if (v == tvChoice3) {
                 buttonsArePressed(tvChoice3);
+                isFinalChoice3 = true;
                 isChoice3Clicked = true;
             }
             if (v == tvChoice4) {
                 buttonsArePressed(tvChoice4);
+                isFinalChoice4 = true;
                 isChoice4Clicked = true;
             }
             if (v == tvChoice5) {
                 buttonsArePressed(tvChoice5);
+                isFinalChoice5 = true;
                 isChoice5Clicked = true;
 
             }
