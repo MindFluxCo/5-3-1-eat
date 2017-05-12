@@ -12,6 +12,8 @@ public class ChoicesObject {
     public String choice4;
     public String choice5;
 
+
+
     public ChoicesObject () {}
 
     public ChoicesObject (String userChoice1, String userChoice2, String userChoice3,

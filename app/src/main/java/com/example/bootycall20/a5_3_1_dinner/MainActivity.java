@@ -1,21 +1,24 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,13 +35,15 @@ public class MainActivity extends AppCompatActivity {
     public String choice3;
     public String choice4;
     public String choice5;
-    public Boolean isChoice1Clicked = false;
     public Boolean isChoice2Clicked = false;
     public Boolean isChoice3Clicked = false;
     public Boolean isChoice4Clicked = false;
     public Boolean isChoice5Clicked = false;
-  
+    public Boolean isChoice1Clicked = false;
+
     private AdView mAdView;
+
+    private Context mContext;
 
     @BindView(R.id.editChoice1)
     TextView editChoice1;
@@ -176,11 +181,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if(isChoice1Clicked = true){
+                    FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
-                FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
+                    Intent intent = new Intent(v.getContext(), VenueOptions.class);
+                    startActivity(intent);
 
-                Intent intent = new Intent(v.getContext(), VenueOptions.class);
-                startActivity(intent);
+                }
+
+                if(isChoice1Clicked = false){
+                    Toast.makeText(mContext, "No venues entered. Please enter a Venue", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
