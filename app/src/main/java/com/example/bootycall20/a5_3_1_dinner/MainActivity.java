@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -26,13 +27,16 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     public int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
+    //Places API Variables
     public String mPlaceName;
     public String mPlaceAdress;
+    // Firebase Object Variables
     public String choice1;
     public String choice2;
     public String choice3;
     public String choice4;
     public String choice5;
+    //When buttons are clicked, mark true/flase for text filling
     public Boolean isChoice1Clicked = false;
     public Boolean isChoice2Clicked = false;
     public Boolean isChoice3Clicked = false;
@@ -49,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.editChoice5)
     TextView editChoice5;
     Button UpdateVenueButton;
+    private int mChoicesClicked = 0;
+    //Variables for isButtonClicked
+    private Boolean isChoice1Filled = false;
+    private Boolean isChoice2Filled = false;
+    private Boolean isChoice3Filled = false;
+    private Boolean isChoice4Filled = false;
+    private Boolean isChoice5Filled = false;
     private AdView mAdView;
 
     @Override
@@ -174,11 +185,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (isChoice1Filled && isChoice2Filled &&
+                        isChoice3Filled && isChoice4Filled && isChoice5Filled) {
 
-                FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
+                    FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
-                Intent intent = new Intent(v.getContext(), VenueOptions.class);
-                startActivity(intent);
+                    Intent intent = new Intent(v.getContext(), VenueOptions.class);
+                    startActivity(intent);
+
+                } else {
+                    Toast.makeText(MainActivity.this, "Please Type All Options", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -226,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice1Clicked = false;
+                    isChoice1Filled = true;
                 }
                 if (isChoice2Clicked) {
                     editChoice2.setText(mPlaceName);
@@ -233,6 +251,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice2Clicked = false;
+                    isChoice2Filled = true;
                 }
                 if (isChoice3Clicked) {
                     editChoice3.setText(mPlaceName);
@@ -240,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice3Clicked = false;
+                    isChoice3Filled = true;
                 }
                 if (isChoice4Clicked) {
                     editChoice4.setText(mPlaceName);
@@ -247,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice4Clicked = false;
+                    isChoice4Filled = true;
                 }
                 if (isChoice5Clicked) {
                     editChoice5.setText(mPlaceName);
@@ -254,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice5Clicked = false;
+                    isChoice5Filled = true;
                 }
 
 
@@ -264,6 +286,28 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (resultCode == RESULT_CANCELED) {
                 // The user canceled the operation.
+                Log.v("Places", "user cancelled");
+
+                if (isChoice1Clicked) {
+                    isChoice1Clicked = false;
+                    isChoice1Filled = false;
+                }
+                if (isChoice2Clicked) {
+                    isChoice2Filled = false;
+                    isChoice2Clicked = false;
+                }
+                if (isChoice3Clicked) {
+                    isChoice3Filled = false;
+                    isChoice3Clicked = false;
+                }
+                if (isChoice4Clicked) {
+                    isChoice4Filled = false;
+                    isChoice4Clicked = false;
+                }
+                if (isChoice5Clicked) {
+                    isChoice5Filled = false;
+                    isChoice5Clicked = false;
+                }
             }
         }
     }
