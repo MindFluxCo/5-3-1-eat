@@ -1,6 +1,5 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -35,16 +33,11 @@ public class MainActivity extends AppCompatActivity {
     public String choice3;
     public String choice4;
     public String choice5;
+    public Boolean isChoice1Clicked = false;
     public Boolean isChoice2Clicked = false;
     public Boolean isChoice3Clicked = false;
     public Boolean isChoice4Clicked = false;
     public Boolean isChoice5Clicked = false;
-    public Boolean isChoice1Clicked = false;
-
-    private AdView mAdView;
-
-    private Context mContext;
-
     @BindView(R.id.editChoice1)
     TextView editChoice1;
     @BindView(R.id.editChoice2)
@@ -56,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.editChoice5)
     TextView editChoice5;
     Button UpdateVenueButton;
-
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,18 +174,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isChoice1Clicked = true){
-                    FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
-                    Intent intent = new Intent(v.getContext(), VenueOptions.class);
-                    startActivity(intent);
+                FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
-                }
-
-                if(isChoice1Clicked = false){
-                    Toast.makeText(mContext, "No venues entered. Please enter a Venue", Toast.LENGTH_SHORT).show();
-                }
-
+                Intent intent = new Intent(v.getContext(), VenueOptions.class);
+                startActivity(intent);
             }
         });
 
