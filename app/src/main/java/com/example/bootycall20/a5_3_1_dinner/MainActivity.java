@@ -3,19 +3,20 @@ package com.example.bootycall20.a5_3_1_dinner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,9 +38,6 @@ public class MainActivity extends AppCompatActivity {
     public Boolean isChoice3Clicked = false;
     public Boolean isChoice4Clicked = false;
     public Boolean isChoice5Clicked = false;
-  
-    private AdView mAdView;
-
     @BindView(R.id.editChoice1)
     TextView editChoice1;
     @BindView(R.id.editChoice2)
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.editChoice5)
     TextView editChoice5;
     Button UpdateVenueButton;
-
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
