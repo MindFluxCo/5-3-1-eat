@@ -31,11 +31,24 @@ public class MainActivity extends AppCompatActivity {
     public String mPlaceName;
     public String mPlaceAdress;
     // Firebase Object Variables
-    public String choice1;
-    public String choice2;
-    public String choice3;
-    public String choice4;
-    public String choice5;
+    public String name1;
+    public String adress1;
+    public String name2;
+    public String adress2;
+    public String name3;
+    public String adress3;
+    public String name4;
+    public String adress4;
+    public String name5;
+    public String adress5;
+
+    public ChoicesDetail choice1;
+    public ChoicesDetail choice2;
+    public ChoicesDetail choice3;
+    public ChoicesDetail choice4;
+    public ChoicesDetail choice5;
+
+
     //When buttons are clicked, mark true/flase for text filling
     public Boolean isChoice1Clicked = false;
     public Boolean isChoice2Clicked = false;
@@ -181,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
         UpdateVenueButton = (Button) findViewById(R.id.button);
 
+        //TODO: Fix Updated venues, if only one is clicked it shouldnt move on
         UpdateVenueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isChoice1Filled && isChoice2Filled &&
                         isChoice3Filled && isChoice4Filled && isChoice5Filled) {
 
-                    FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
+                    FirebaseUtility.updateChoice(choice1, choice2, choice3, choice4, choice5);
 
                     Intent intent = new Intent(v.getContext(), VenueOptions.class);
                     startActivity(intent);
@@ -239,7 +253,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isChoice1Clicked) {
                     editChoice1.setText(mPlaceName);
-                    choice1 = mPlaceName;
+                    name1 = mPlaceName;
+                    adress1 = mPlaceAdress;
+                    choice1 = new ChoicesDetail(name1, adress1);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice1Clicked = false;
@@ -247,7 +263,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChoice2Clicked) {
                     editChoice2.setText(mPlaceName);
-                    choice2 = mPlaceName;
+                    name2 = mPlaceName;
+                    adress2 = mPlaceAdress;
+                    choice2 = new ChoicesDetail(name2, adress2);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice2Clicked = false;
@@ -255,7 +273,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChoice3Clicked) {
                     editChoice3.setText(mPlaceName);
-                    choice3 = mPlaceName;
+                    name3 = mPlaceName;
+                    adress3 = mPlaceAdress;
+                    choice3 = new ChoicesDetail(name3, adress3);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice3Clicked = false;
@@ -263,7 +283,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChoice4Clicked) {
                     editChoice4.setText(mPlaceName);
-                    choice4 = mPlaceName;
+                    name4 = mPlaceName;
+                    adress4 = mPlaceAdress;
+                    choice4 = new ChoicesDetail(name4, adress4);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice4Clicked = false;
@@ -271,7 +293,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChoice5Clicked) {
                     editChoice5.setText(mPlaceName);
-                    choice5 = mPlaceName;
+                    name5 = mPlaceName;
+                    adress5 = mPlaceAdress;
+                    choice5 = new ChoicesDetail(name5, adress5);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice5Clicked = false;

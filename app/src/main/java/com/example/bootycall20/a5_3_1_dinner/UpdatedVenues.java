@@ -87,11 +87,21 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
     public void onStart() {
         super.onStart();
 
-        mFirebaseDatabase.child("choices").child(userKey).addListenerForSingleValueEvent(new ValueEventListener() {
+        mFirebaseDatabase.child(userKey).addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ChoicesObject choices = dataSnapshot.getValue(ChoicesObject.class);
+                ChoicesDetail choice1 = dataSnapshot.child("choice1").getValue(ChoicesDetail.class);
+                ChoicesDetail choice2 = dataSnapshot.child("choice2").getValue(ChoicesDetail.class);
+                ChoicesDetail choice3 = dataSnapshot.child("choice3").getValue(ChoicesDetail.class);
+                ChoicesDetail choice4 = dataSnapshot.child("choice4").getValue(ChoicesDetail.class);
+                ChoicesDetail choice5 = dataSnapshot.child("choice5").getValue(ChoicesDetail.class);
+
+                String choice1Name = choice1.name;
+                String choice2Name = choice2.name;
+                String choice3Name = choice3.name;
+                String choice4Name = choice4.name;
+                String choice5Name = choice5.name;
 
                 isChoice1Clicked = VenueOptions.isChoice1Clicked;
                 isChoice2Clicked = VenueOptions.isChoice2Clicked;
@@ -107,31 +117,32 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
 
 
                 if (isChoice1Clicked) {
-                    tvChoice1.setText(choices.choice1);
+                    tvChoice1.setText(choice1Name);
                     tvChoice1.setClickable(true);
                     tvChoice1.setVisibility(View.VISIBLE);
 
                 }
                 if (isChoice2Clicked) {
-                    tvChoice2.setText(choices.choice2);
+                    tvChoice2.setText(choice2Name);
                     tvChoice2.setClickable(true);
                     tvChoice2.setVisibility(View.VISIBLE);
 
                 }
                 if (isChoice3Clicked) {
-                    tvChoice3.setText(choices.choice3);
+                    tvChoice3.setText(choice3Name);
                     tvChoice3.setClickable(true);
                     tvChoice3.setVisibility(View.VISIBLE);
 
                 }
                 if (isChoice4Clicked) {
-                    tvChoice4.setText(choices.choice4);
+                    tvChoice4.setText(choice4Name);
                     tvChoice4.setClickable(true);
                     tvChoice4.setVisibility(View.VISIBLE);
 
+
                 }
                 if (isChoice5Clicked) {
-                    tvChoice5.setText(choices.choice5);
+                    tvChoice5.setText(choice5Name);
                     tvChoice5.setClickable(true);
                     tvChoice5.setVisibility(View.VISIBLE);
 
@@ -168,8 +179,12 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
     }
 
     public void venueOptions5(View view) {
-        Intent intent = new Intent(this, FinalVenue.class);
-        startActivity(intent);
+        if (itemsTouched == 1) {
+            Intent intent = new Intent(this, FinalVenue.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(UpdatedVenues.this, "Please Make a Selection", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void buttonsArePressed(View view) {
@@ -187,7 +202,6 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
                 buttonsArePressed(tvChoice1);
                 isChoice1Clicked = true;
                 isFinalChoice1 = true;
-
             }
             if (v == tvChoice2) {
                 buttonsArePressed(tvChoice2);

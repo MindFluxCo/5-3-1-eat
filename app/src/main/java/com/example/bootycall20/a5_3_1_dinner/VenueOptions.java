@@ -36,6 +36,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
     public int itemsTouched;
 
 
+
     @BindView(R.id.choice1)
     TextView tvChoice1;
     @BindView(R.id.choice2)
@@ -80,17 +81,28 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
     public void onStart() {
         super.onStart();
 
-        mFirebaseDatabase.child("choices").child(userKey).addListenerForSingleValueEvent(new ValueEventListener() {
+        mFirebaseDatabase.child(userKey).addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ChoicesObject choices = dataSnapshot.getValue(ChoicesObject.class);
+                ChoicesDetail choice1 = dataSnapshot.child("choice1").getValue(ChoicesDetail.class);
+                ChoicesDetail choice2 = dataSnapshot.child("choice2").getValue(ChoicesDetail.class);
+                ChoicesDetail choice3 = dataSnapshot.child("choice3").getValue(ChoicesDetail.class);
+                ChoicesDetail choice4 = dataSnapshot.child("choice4").getValue(ChoicesDetail.class);
+                ChoicesDetail choice5 = dataSnapshot.child("choice5").getValue(ChoicesDetail.class);
 
-                tvChoice1.setText(choices.choice1);
-                tvChoice2.setText(choices.choice2);
-                tvChoice3.setText(choices.choice3);
-                tvChoice4.setText(choices.choice4);
-                tvChoice5.setText(choices.choice5);
+                String choice1Name = choice1.name;
+                String choice2Name = choice2.name;
+                String choice3Name = choice3.name;
+                String choice4Name = choice4.name;
+                String choice5Name = choice5.name;
+
+
+                tvChoice1.setText(choice1Name);
+                tvChoice2.setText(choice2Name);
+                tvChoice3.setText(choice3Name);
+                tvChoice4.setText(choice4Name);
+                tvChoice5.setText(choice5Name);
 
             }
 
@@ -158,8 +170,13 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
     }
 
     public void venueOptions5(View view) {
-        Intent intent = new Intent(this, UpdatedVenues.class);
-        startActivity(intent);
+        if (itemsTouched == 3) {
+            Intent intent = new Intent(this, UpdatedVenues.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(VenueOptions.this, "Please Make 3 Slections", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     private void buttonsArePressed(View view) {
