@@ -13,6 +13,8 @@ public class ChoicesObject {
     public ChoicesDetail choice5;
     public ChoicesDetail finalChoice;
 
+
+
     public ChoicesObject () {}
 
     public ChoicesObject(ChoicesDetail userChoice1, ChoicesDetail userChoice2,

@@ -1,128 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.bootycall20.a5_3_1_dinner.MainActivity">
+    android:clipToPadding="false"
+    android:fillViewport="true">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Enter your Favorite Venues to Start 5-3-1"
-        android:textAppearance="@style/TextAppearance.AppCompat" />
-    <TextView
-        android:id="@+id/editChoice1"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:clickable="true"
-        android:contentDescription="@string/venue_option_4"
-        android:elevation="13dp"
-        android:padding="20dp"
-        android:text="Pick One"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.bootycall20.a5_3_1_dinner.MainActivity">
 
-    <TextView
-        android:id="@+id/editChoice2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editChoice1"
-        android:clickable="true"
-        android:contentDescription="@string/venue_option_4"
-        android:elevation="13dp"
-        android:padding="20dp"
-        android:text="Pick Two"
-        android:textAlignment="center"
-        android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/editChoice3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editChoice2"
-        android:clickable="true"
-        android:contentDescription="@string/venue_option_4"
-        android:elevation="13dp"
-        android:padding="20dp"
-        android:text="Pick Three"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter your Favorite Venues to Start 5-3-1"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/editChoice4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editChoice3"
-        android:clickable="true"
-        android:contentDescription="@string/venue_option_4"
-        android:elevation="13dp"
-        android:padding="20dp"
-        android:text="Pick Four"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/editChoice1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView"
+            android:clickable="true"
+            android:contentDescription="@string/venue_option_4"
+            android:elevation="13dp"
+            android:padding="20dp"
+            android:text="Pick One"
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/editChoice5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editChoice4"
-        android:clickable="true"
-        android:contentDescription="@string/venue_option_4"
-        android:elevation="13dp"
-        android:padding="20dp"
-        android:text="Pick Five"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/editChoice2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editChoice1"
+            android:clickable="true"
+            android:contentDescription="@string/venue_option_4"
+            android:elevation="13dp"
+            android:padding="20dp"
+            android:text="Pick Two"
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editChoice5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:elevation="10dp"
-        android:hint="Where to Eat?" />
+        <TextView
+            android:id="@+id/editChoice3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editChoice2"
+            android:clickable="true"
+            android:contentDescription="@string/venue_option_4"
+            android:elevation="13dp"
+            android:padding="20dp"
+            android:text="Pick Three"
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id" />
+        <TextView
+            android:id="@+id/editChoice4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editChoice3"
+            android:clickable="true"
+            android:contentDescription="@string/venue_option_4"
+            android:elevation="13dp"
+            android:padding="20dp"
+            android:text="Pick Four"
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/editChoice5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editChoice4"
+            android:clickable="true"
+            android:contentDescription="@string/venue_option_4"
+            android:elevation="13dp"
+            android:padding="20dp"
+            android:text="Pick Five"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editChoice5"
+            android:layout_centerHorizontal="true"
+            android:elevation="20dp"
+            android:hint="Where to Eat?" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id" />
+
+    </RelativeLayout>
+</ScrollView>
