@@ -21,22 +21,24 @@ import butterknife.ButterKnife;
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 
-/**
- * Created by BootyCall2.0 on 3/14/2017.
- */
-
 public class VenueOptions extends AppCompatActivity implements View.OnClickListener {
 
+
+    //When views are created, mark true/flase for text filling
     public static Boolean isChoice1Clicked = false;
     public static Boolean isChoice2Clicked = false;
     public static Boolean isChoice3Clicked = false;
     public static Boolean isChoice4Clicked = false;
     public static Boolean isChoice5Clicked = false;
+
+    //Unique ID for Firebase Database Post
     public String userKey;
+
+    //Counts how many items are selected to restrict moving on if requirements aren't met/
     public int itemsTouched;
 
 
-
+    //View Bindings
     @BindView(R.id.choice1)
     TextView tvChoice1;
     @BindView(R.id.choice2)
@@ -48,7 +50,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.choice5)
     TextView tvChoice5;
 
-
+    //Firebase database reference
     private DatabaseReference mFirebaseDatabase;
 
     @Override
@@ -113,7 +115,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-
+    //If 3 views are not selected you cannot move on to the next page
     @Override
     public void onClick(View v) {
 
@@ -179,6 +181,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    //When a view is pressed ad a background color to indicate selections
     private void buttonsArePressed(View view) {
 
         view.setBackgroundColor(getResources().getColor(R.color.primary));
