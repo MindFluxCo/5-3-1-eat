@@ -3,7 +3,6 @@ package com.example.bootycall20.a5_3_1_dinner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -26,12 +25,10 @@ import com.transitionseverywhere.Slide;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static android.R.attr.visible;
-
 
 public class MainActivity extends AppCompatActivity {
 
-    public final ViewGroup transitionsContainer = (ViewGroup) findViewById(R.id.activity_main);
+
     public int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     //Places API Variables
     public String mPlaceName;
@@ -73,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        final ViewGroup transitionsContainer = (ViewGroup) findViewById(R.id.activity_main);
 
         transitionsContainer.addView(editChoice1);
         transitionsContainer.addView(editChoice2);
@@ -194,8 +193,10 @@ public class MainActivity extends AppCompatActivity {
         UpdateVenueButton = (Button) transitionsContainer.findViewById(R.id.button);
 
         UpdateVenueButton.setOnClickListener(new View.OnClickListener() {
+
+            boolean visible;
             @Override
-            public void onClick(View visible) {
+            public void onClick(View v) {
 
                 if (isChoice1Filled && isChoice2Filled &&
                         isChoice3Filled && isChoice4Filled && isChoice5Filled) {
@@ -203,10 +204,11 @@ public class MainActivity extends AppCompatActivity {
                     FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
 
-                    TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
+                    com.transitionseverywhere.TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
                     transitionsContainer.setVisibility(visible ? View.VISIBLE : View.GONE);
 
-                    Intent intent = new Intent(visible.getContext(), VenueOptions.class);
+
+                    Intent intent = new Intent(v.getContext(), VenueOptions.class);
                     startActivity(intent);
 
 //                    handle transitions
