@@ -194,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
 
         UpdateVenueButton = (Button) findViewById(R.id.button);
 
-        //TODO: Fix Updated venues, if only one is clicked it shouldnt move on
         UpdateVenueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

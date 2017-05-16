@@ -1,5 +1,7 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -56,7 +58,7 @@ public class FinalVenue extends AppCompatActivity {
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
 
-        tvChoice2.setTextSize(60);
+        tvChoice2.setTextSize(40);
         tvChoice2.setVisibility(View.VISIBLE);
 
         tvChoice3.setVisibility(View.VISIBLE);
@@ -173,7 +175,14 @@ public class FinalVenue extends AppCompatActivity {
     }
 
     public void venueOptions5(View view) {
-        Toast.makeText(FinalVenue.this, "open maps", Toast.LENGTH_SHORT).show();
+        Intent geoIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q="
+                + tvChoice3.getText().toString()));
+        if (geoIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(geoIntent);
+        } else {
+            Toast.makeText(FinalVenue.this, "Please install a Maps Application", Toast.LENGTH_LONG);
+        }
+
 
     }
 
