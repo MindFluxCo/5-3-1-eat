@@ -8,8 +8,8 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
     TextView editChoice4;
     @BindView(R.id.editChoice5)
     TextView editChoice5;
+    @BindView(R.id.activity_main)
+    RelativeLayout main_activity;
+
     Button UpdateVenueButton;
     private int mChoicesClicked = 0;
     //Variables for isButtonClicked
@@ -71,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        final ViewGroup transitionsContainer = (ViewGroup) findViewById(R.id.activity_main);
-
-        transitionsContainer.addView(editChoice1);
-        transitionsContainer.addView(editChoice2);
-        transitionsContainer.addView(editChoice3);
-        transitionsContainer.addView(editChoice4);
-        transitionsContainer.addView(editChoice5);
+//        final ViewGroup transitionsContainer = (ViewGroup) findViewById(R.id.activity_main);
+//
+//        transitionsContainer.addView(editChoice1);
+//        transitionsContainer.addView(editChoice2);
+//        transitionsContainer.addView(editChoice3);
+//        transitionsContainer.addView(editChoice4);
+//        transitionsContainer.addView(editChoice5);
 
         editChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         //mAdView.setAdListener(new ToastAdListener(this));
 
 
-        UpdateVenueButton = (Button) transitionsContainer.findViewById(R.id.button);
+        UpdateVenueButton = (Button) main_activity.findViewById(R.id.button);
 
         UpdateVenueButton.setOnClickListener(new View.OnClickListener() {
 
@@ -203,9 +206,8 @@ public class MainActivity extends AppCompatActivity {
 
                     FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
-
-                    com.transitionseverywhere.TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
-                    transitionsContainer.setVisibility(visible ? View.VISIBLE : View.GONE);
+                    com.transitionseverywhere.TransitionManager.beginDelayedTransition(main_activity, new Slide(Gravity.RIGHT));
+                    main_activity.setVisibility(visible ? View.VISIBLE : View.GONE);
 
 
                     Intent intent = new Intent(v.getContext(), VenueOptions.class);
@@ -331,9 +333,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-    }
-
-    public static class ViewHolder {
-
     }
 }
