@@ -3,10 +3,13 @@ package com.example.bootycall20.a5_3_1_dinner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.TransitionManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,14 +21,17 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.transitionseverywhere.Slide;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static android.R.attr.visible;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    public final ViewGroup transitionsContainer = (ViewGroup) findViewById(R.id.activity_main);
     public int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     //Places API Variables
     public String mPlaceName;
@@ -67,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        transitionsContainer.addView(editChoice1);
+        transitionsContainer.addView(editChoice2);
+        transitionsContainer.addView(editChoice3);
+        transitionsContainer.addView(editChoice4);
+        transitionsContainer.addView(editChoice5);
 
         editChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,23 +187,30 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
         mAdView.loadAd(adRequest);
+        //additional code to attatch listener to AdView
+        //mAdView.setAdListener(new ToastAdListener(this));
 
-//        additional code to attatch listener to AdView
-        //        mAdView.setAdListener(new ToastAdListener(this));
 
-        UpdateVenueButton = (Button) findViewById(R.id.button);
+        UpdateVenueButton = (Button) transitionsContainer.findViewById(R.id.button);
 
         UpdateVenueButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View visible) {
 
                 if (isChoice1Filled && isChoice2Filled &&
                         isChoice3Filled && isChoice4Filled && isChoice5Filled) {
 
                     FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
-                    Intent intent = new Intent(v.getContext(), VenueOptions.class);
+
+                    TransitionManager.beginDelayedTransition(transitionsContainer, new Slide(Gravity.RIGHT));
+                    transitionsContainer.setVisibility(visible ? View.VISIBLE : View.GONE);
+
+                    Intent intent = new Intent(visible.getContext(), VenueOptions.class);
                     startActivity(intent);
+
+//                    handle transitions
+
 
                 } else {
                     Toast.makeText(MainActivity.this, "Please Type All Options", Toast.LENGTH_SHORT).show();
@@ -310,5 +329,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public static class ViewHolder {
+
     }
 }

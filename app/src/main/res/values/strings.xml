@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">5-3-1-Dinner</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">How to use 5-3-1</string>
 
     <!--XML strings-->
-    <string name="venue_option_1">Venue option 1</string>
-    <string name="venue_option_2">Venue option 2</string>
-    <string name="venue_option_3">Venue option 3</string>
-    <string name="venue_option_4">Venue option 4</string>
-    <string name="venue_option_5">Venue option 5</string>
+    <string name="venue_option_1">Venue Option 1</string>
+    <string name="venue_option_2">Venue Option 2</string>
+    <string name="venue_option_3">Venue Option 3</string>
+    <string name="venue_option_4">Venue Option 4</string>
+    <string name="venue_option_5">Venue Option 5</string>
     <string name="update_venues">Update Venues</string>
+    <string name="start_531">Start 5-3-1</string>
+    <string name="greeting">Enter Five Venues to Start 5-3-1</string>
 
     <string name="banner_ad">Banner Ad</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
