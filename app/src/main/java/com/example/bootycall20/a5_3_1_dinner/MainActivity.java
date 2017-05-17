@@ -29,21 +29,38 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     public int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
+
     //Places API Variables
     public String mPlaceName;
     public String mPlaceAdress;
-    // Firebase Object Variables
-    public String choice1;
-    public String choice2;
-    public String choice3;
-    public String choice4;
-    public String choice5;
+
+    // Objects for Firebase Database
+    public String name1;
+    public String adress1;
+    public String name2;
+    public String adress2;
+    public String name3;
+    public String adress3;
+    public String name4;
+    public String adress4;
+    public String name5;
+    public String adress5;
+
+    public ChoicesDetail choice1;
+    public ChoicesDetail choice2;
+    public ChoicesDetail choice3;
+    public ChoicesDetail choice4;
+    public ChoicesDetail choice5;
+
+
     //When buttons are clicked, mark true/flase for text filling
     public Boolean isChoice1Clicked = false;
     public Boolean isChoice2Clicked = false;
     public Boolean isChoice3Clicked = false;
     public Boolean isChoice4Clicked = false;
     public Boolean isChoice5Clicked = false;
+
+    //View Bindings
     @BindView(R.id.editChoice1)
     TextView editChoice1;
     @BindView(R.id.editChoice2)
@@ -54,18 +71,17 @@ public class MainActivity extends AppCompatActivity {
     TextView editChoice4;
     @BindView(R.id.editChoice5)
     TextView editChoice5;
-    @BindView(R.id.activity_main)
-    RelativeLayout main_activity;
 
-    Button UpdateVenueButton;
-    private int mChoicesClicked = 0;
-    //Variables for isButtonClicked
+    @BindView(R.id.button)
+    Button updateVenueButton;
+    private AdView mAdView;
+
+    //Variables for checking if all views are clicked to move on
     private Boolean isChoice1Filled = false;
     private Boolean isChoice2Filled = false;
     private Boolean isChoice3Filled = false;
     private Boolean isChoice4Filled = false;
     private Boolean isChoice5Filled = false;
-    private AdView mAdView;
 
 
     @Override
@@ -177,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        loads test adds into AdView
+        //Loads Ads(test) Into AdView
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
@@ -186,24 +202,15 @@ public class MainActivity extends AppCompatActivity {
         //mAdView.setAdListener(new ToastAdListener(this));
 
 
-        UpdateVenueButton = (Button) main_activity.findViewById(R.id.button);
-
-        UpdateVenueButton.setOnClickListener(new View.OnClickListener() {
-
-            boolean visible;
+        //Moves the activity on to Venue Options
+        updateVenueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (isChoice1Filled && isChoice2Filled &&
                         isChoice3Filled && isChoice4Filled && isChoice5Filled) {
 
-                    FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
-
-
-                    com.transitionseverywhere.TransitionManager.beginDelayedTransition(main_activity, new Slide(Gravity.RIGHT));
-                    main_activity.setVisibility(visible ? View.VISIBLE : View.GONE);
-
-
+                    FirebaseUtility.updateChoice(choice1, choice2, choice3, choice4, choice5);
                     Intent intent = new Intent(v.getContext(), VenueOptions.class);
                     startActivity(intent);
 
@@ -248,13 +255,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
+                // If Google Place API can connect
+                // Get the name and address
                 Place place = PlaceAutocomplete.getPlace(this, data);
                 mPlaceName = place.getName().toString();
                 mPlaceAdress = place.getAddress().toString();
 
+                // When a certain view is clicked, set Name, Address, and mark as unclicked
+                // and filled when finished
+
                 if (isChoice1Clicked) {
                     editChoice1.setText(mPlaceName);
-                    choice1 = mPlaceName;
+                    name1 = mPlaceName;
+                    adress1 = mPlaceAdress;
+                    choice1 = new ChoicesDetail(name1, adress1);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice1Clicked = false;
@@ -262,7 +276,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChoice2Clicked) {
                     editChoice2.setText(mPlaceName);
-                    choice2 = mPlaceName;
+                    name2 = mPlaceName;
+                    adress2 = mPlaceAdress;
+                    choice2 = new ChoicesDetail(name2, adress2);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice2Clicked = false;
@@ -270,7 +286,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChoice3Clicked) {
                     editChoice3.setText(mPlaceName);
-                    choice3 = mPlaceName;
+                    name3 = mPlaceName;
+                    adress3 = mPlaceAdress;
+                    choice3 = new ChoicesDetail(name3, adress3);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice3Clicked = false;
@@ -278,7 +296,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChoice4Clicked) {
                     editChoice4.setText(mPlaceName);
-                    choice4 = mPlaceName;
+                    name4 = mPlaceName;
+                    adress4 = mPlaceAdress;
+                    choice4 = new ChoicesDetail(name4, adress4);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice4Clicked = false;
@@ -286,7 +306,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (isChoice5Clicked) {
                     editChoice5.setText(mPlaceName);
-                    choice5 = mPlaceName;
+                    name5 = mPlaceName;
+                    adress5 = mPlaceAdress;
+                    choice5 = new ChoicesDetail(name5, adress5);
                     Log.v("Places", "Place: " + mPlaceName);
                     Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice5Clicked = false;
@@ -302,6 +324,9 @@ public class MainActivity extends AppCompatActivity {
             } else if (resultCode == RESULT_CANCELED) {
                 // The user canceled the operation.
                 Log.v("Places", "user cancelled");
+
+                // Mark as not clicked and not filled so user cannot move on to next screen
+                // until text is inputted
 
                 if (isChoice1Clicked) {
                     isChoice1Clicked = false;

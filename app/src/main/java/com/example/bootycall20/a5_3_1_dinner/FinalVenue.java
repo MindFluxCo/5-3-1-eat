@@ -1,6 +1,7 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -56,7 +58,17 @@ public class FinalVenue extends AppCompatActivity {
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
 
+        tvChoice2.setTextSize(40);
+        tvChoice2.setVisibility(View.VISIBLE);
+
         tvChoice3.setVisibility(View.VISIBLE);
+        tvChoice3.setTextSize(20);
+        tvChoice3.setClickable(false);
+        tvChoice3.setVisibility(View.VISIBLE);
+
+        button2.setVisibility(View.VISIBLE);
+        button2.setText("Open in Maps...");
+        button2.setClickable(true);
 
 
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
@@ -68,11 +80,28 @@ public class FinalVenue extends AppCompatActivity {
     public void onStart() {
         super.onStart();
 
-        mFirebaseDatabase.child("choices").child(userKey).addListenerForSingleValueEvent(new ValueEventListener() {
+        mFirebaseDatabase.child(userKey).addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ChoicesObject choices = dataSnapshot.getValue(ChoicesObject.class);
+                ChoicesDetail choice1 = dataSnapshot.child("choice1").getValue(ChoicesDetail.class);
+                ChoicesDetail choice2 = dataSnapshot.child("choice2").getValue(ChoicesDetail.class);
+                ChoicesDetail choice3 = dataSnapshot.child("choice3").getValue(ChoicesDetail.class);
+                ChoicesDetail choice4 = dataSnapshot.child("choice4").getValue(ChoicesDetail.class);
+                ChoicesDetail choice5 = dataSnapshot.child("choice5").getValue(ChoicesDetail.class);
+
+                String choice1Name = choice1.name;
+                String choice2Name = choice2.name;
+                String choice3Name = choice3.name;
+                String choice4Name = choice4.name;
+                String choice5Name = choice5.name;
+
+                String choice1Adress = choice1.adress;
+                String choice2Adress = choice1.adress;
+                String choice3Adress = choice1.adress;
+                String choice4Adress = choice1.adress;
+                String choice5Adress = choice1.adress;
+
 
                 isFinalChoice1 = UpdatedVenues.isFinalChoice1;
                 isFinalChoice2 = UpdatedVenues.isFinalChoice2;
@@ -89,28 +118,31 @@ public class FinalVenue extends AppCompatActivity {
 
 
                 if (isFinalChoice1) {
-                    tvChoice3.setText(choices.choice1);
-                    tvChoice3.setTextSize(100);
+                    tvChoice2.setText(choice1Name);
+                    tvChoice3.setText(choice1Adress);
+                    FirebaseUtility.setFinalChoice(choice1Name, choice1Adress);
                 }
                 if (isFinalChoice2) {
-                    tvChoice3.setText(choices.choice2);
-                    tvChoice3.setTextSize(100);
+                    tvChoice2.setText(choice2Name);
+                    tvChoice3.setText(choice2Adress);
+                    FirebaseUtility.setFinalChoice(choice2Name, choice2Adress);
                 }
                 if (isFinalChoice3) {
-                    tvChoice3.setText(choices.choice3);
-                    tvChoice3.setTextSize(100);
+                    tvChoice2.setText(choice3Name);
+                    tvChoice3.setText(choice3Adress);
+                    FirebaseUtility.setFinalChoice(choice3Name, choice3Adress);
                 }
                 if (isFinalChoice4) {
-                    tvChoice3.setText(choices.choice4);
-                    tvChoice3.setTextSize(100);
+                    tvChoice2.setText(choice4Name);
+                    tvChoice3.setText(choice4Adress);
+                    FirebaseUtility.setFinalChoice(choice4Name, choice4Adress);
                 }
                 if (isFinalChoice5) {
-                    tvChoice3.setText(choices.choice5);
-                    tvChoice3.setTextSize(50);
+                    tvChoice2.setText(choice5Name);
+                    tvChoice3.setText(choice5Adress);
+                    FirebaseUtility.setFinalChoice(choice5Name, choice5Adress);
                 }
 
-                button2.setVisibility(View.INVISIBLE);
-                button2.setClickable(false);
 
             }
 
@@ -142,9 +174,16 @@ public class FinalVenue extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void finalVenue(View view) {
-        Intent intent = new Intent(this, FinalVenue.class);
-        startActivity(intent);
+    public void venueOptions5(View view) {
+        Intent geoIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q="
+                + tvChoice3.getText().toString()));
+        if (geoIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(geoIntent);
+        } else {
+            Toast.makeText(FinalVenue.this, "Please install a Maps Application", Toast.LENGTH_LONG);
+        }
+
+
     }
 
 }
