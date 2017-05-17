@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,10 +20,10 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.transitionseverywhere.Slide;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -69,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
     TextView editChoice4;
     @BindView(R.id.editChoice5)
     TextView editChoice5;
+
     @BindView(R.id.button)
     Button updateVenueButton;
     private AdView mAdView;
-
 
     //Variables for checking if all views are clicked to move on
     private Boolean isChoice1Filled = false;
@@ -81,11 +83,13 @@ public class MainActivity extends AppCompatActivity {
     private Boolean isChoice4Filled = false;
     private Boolean isChoice5Filled = false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
 
         editChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,6 +198,9 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
         mAdView.loadAd(adRequest);
+        //additional code to attatch listener to AdView
+        //mAdView.setAdListener(new ToastAdListener(this));
+
 
         //Moves the activity on to Venue Options
         updateVenueButton.setOnClickListener(new View.OnClickListener() {
@@ -204,9 +211,9 @@ public class MainActivity extends AppCompatActivity {
                         isChoice3Filled && isChoice4Filled && isChoice5Filled) {
 
                     FirebaseUtility.updateChoice(choice1, choice2, choice3, choice4, choice5);
-
                     Intent intent = new Intent(v.getContext(), VenueOptions.class);
                     startActivity(intent);
+
 
                 } else {
                     Toast.makeText(MainActivity.this, "Please Type All Options", Toast.LENGTH_SHORT).show();
