@@ -1,6 +1,7 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -25,11 +26,11 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
 
     //When views are created, mark true/flase for text filling
-    public static Boolean isChoice1Clicked = false;
-    public static Boolean isChoice2Clicked = false;
-    public static Boolean isChoice3Clicked = false;
-    public static Boolean isChoice4Clicked = false;
-    public static Boolean isChoice5Clicked = false;
+    public static Boolean isChoice1Clicked;
+    public static Boolean isChoice2Clicked;
+    public static Boolean isChoice3Clicked;
+    public static Boolean isChoice4Clicked;
+    public static Boolean isChoice5Clicked;
 
     //Unique ID for Firebase Database Post
     public String userKey;
@@ -53,6 +54,11 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
+        isChoice1Clicked = false;
+        isChoice2Clicked = false;
+        isChoice3Clicked = false;
+        isChoice4Clicked = false;
+        isChoice5Clicked = false;
 
         tvChoice1.setVisibility(View.VISIBLE);
         tvChoice2.setVisibility(View.VISIBLE);
@@ -183,4 +189,9 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
         itemsTouched++;
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+    }
 }
