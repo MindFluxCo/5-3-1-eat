@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +18,6 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
-import com.transitionseverywhere.Slide;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,20 +58,13 @@ public class MainActivity extends AppCompatActivity {
     public Boolean isChoice5Clicked = false;
 
     //View Bindings
-    @BindView(R.id.editChoice1)
-    TextView editChoice1;
-    @BindView(R.id.editChoice2)
-    TextView editChoice2;
-    @BindView(R.id.editChoice3)
-    TextView editChoice3;
-    @BindView(R.id.editChoice4)
-    TextView editChoice4;
-    @BindView(R.id.editChoice5)
-    TextView editChoice5;
+    @BindView(R.id.editChoice1) TextView editChoice1;
+    @BindView(R.id.editChoice2) TextView editChoice2;
+    @BindView(R.id.editChoice3) TextView editChoice3;
+    @BindView(R.id.editChoice4) TextView editChoice4;
+    @BindView(R.id.editChoice5) TextView editChoice5;
+    @BindView(R.id.button) Button updateVenueButton;
 
-    @BindView(R.id.button)
-    Button updateVenueButton;
-    private AdView mAdView;
 
     //Variables for checking if all views are clicked to move on
     private Boolean isChoice1Filled = false;
@@ -82,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
     private Boolean isChoice3Filled = false;
     private Boolean isChoice4Filled = false;
     private Boolean isChoice5Filled = false;
+
+    private AdView mAdView;
+
 
 
     @Override
@@ -198,9 +191,6 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
         mAdView.loadAd(adRequest);
-        //additional code to attatch listener to AdView
-        //mAdView.setAdListener(new ToastAdListener(this));
-
 
         //Moves the activity on to Venue Options
         updateVenueButton.setOnClickListener(new View.OnClickListener() {

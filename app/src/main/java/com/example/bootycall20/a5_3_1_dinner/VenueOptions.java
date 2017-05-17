@@ -39,16 +39,11 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
 
     //View Bindings
-    @BindView(R.id.choice1)
-    TextView tvChoice1;
-    @BindView(R.id.choice2)
-    TextView tvChoice2;
-    @BindView(R.id.choice3)
-    TextView tvChoice3;
-    @BindView(R.id.choice4)
-    TextView tvChoice4;
-    @BindView(R.id.choice5)
-    TextView tvChoice5;
+    @BindView(R.id.choice1) TextView tvChoice1;
+    @BindView(R.id.choice2) TextView tvChoice2;
+    @BindView(R.id.choice3) TextView tvChoice3;
+    @BindView(R.id.choice4) TextView tvChoice4;
+    @BindView(R.id.choice5) TextView tvChoice5;
 
     //Firebase database reference
     private DatabaseReference mFirebaseDatabase;

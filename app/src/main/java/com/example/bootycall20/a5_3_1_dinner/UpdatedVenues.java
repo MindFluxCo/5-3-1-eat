@@ -21,10 +21,6 @@ import butterknife.ButterKnife;
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 
-/**
- * Created by BootyCall2.0 on 3/14/2017.
- */
-
 public class UpdatedVenues extends AppCompatActivity implements View.OnClickListener {
 
     public static Boolean isFinalChoice1 = false;
@@ -43,16 +39,11 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
     public String userKey;
     public int itemsTouched;
 
-    @BindView(R.id.choice1)
-    TextView tvChoice1;
-    @BindView(R.id.choice2)
-    TextView tvChoice2;
-    @BindView(R.id.choice3)
-    TextView tvChoice3;
-    @BindView(R.id.choice4)
-    TextView tvChoice4;
-    @BindView(R.id.choice5)
-    TextView tvChoice5;
+    @BindView(R.id.choice1) TextView tvChoice1;
+    @BindView(R.id.choice2) TextView tvChoice2;
+    @BindView(R.id.choice3) TextView tvChoice3;
+    @BindView(R.id.choice4) TextView tvChoice4;
+    @BindView(R.id.choice5) TextView tvChoice5;
 
     private DatabaseReference mFirebaseDatabase;
 

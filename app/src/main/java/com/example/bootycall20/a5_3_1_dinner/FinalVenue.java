@@ -22,9 +22,6 @@ import butterknife.ButterKnife;
 
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
-/**
- * Created by BootyCall2.0 on 3/14/2017.
- */
 
 public class FinalVenue extends AppCompatActivity {
 
@@ -36,18 +33,12 @@ public class FinalVenue extends AppCompatActivity {
     public Boolean isFinalChoice4;
     public Boolean isFinalChoice5;
 
-    @BindView(R.id.choice1)
-    TextView tvChoice1;
-    @BindView(R.id.choice2)
-    TextView tvChoice2;
-    @BindView(R.id.choice3)
-    TextView tvChoice3;
-    @BindView(R.id.choice4)
-    TextView tvChoice4;
-    @BindView(R.id.choice5)
-    TextView tvChoice5;
-    @BindView(R.id.button2)
-    Button button2;
+    @BindView(R.id.choice1) TextView tvChoice1;
+    @BindView(R.id.choice2) TextView tvChoice2;
+    @BindView(R.id.choice3) TextView tvChoice3;
+    @BindView(R.id.choice4) TextView tvChoice4;
+    @BindView(R.id.choice5) TextView tvChoice5;
+    @BindView(R.id.button2) Button button2;
 
 
     private DatabaseReference mFirebaseDatabase;
@@ -55,6 +46,7 @@ public class FinalVenue extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
 

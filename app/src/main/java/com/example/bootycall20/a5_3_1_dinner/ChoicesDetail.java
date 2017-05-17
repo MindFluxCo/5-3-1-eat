@@ -1,8 +1,5 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
-/**
- * Created by LucasVasquez on 5/15/17.
- */
 
 public class ChoicesDetail {
 

@@ -7,10 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-/**
- * Created by LucasVasquez on 5/8/17.
- */
-
 public class FirebaseUtility extends MainActivity {
 
     public static FirebaseDatabase mFirebaseDatabase;
@@ -26,7 +22,6 @@ public class FirebaseUtility extends MainActivity {
 
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-
         mChoicesRef = mFirebaseDatabase.getReference();
         mChoicesId = mChoicesRef.push().getKey();
 
@@ -37,14 +32,14 @@ public class FirebaseUtility extends MainActivity {
 
     }
 
-    public static void setFinalChoice(String name, String adress) {
+    public static void setFinalChoice(String name, String address) {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
 
 //        mChoicesRef.child(mChoicesId).setValue(choices);
 
         Map<String, Object> finalChoice = new HashMap<>();
         finalChoice.put("finalName", name);
-        finalChoice.put("finalAdress", adress);
+        finalChoice.put("finalAddress", address);
 
         mChoicesRef.child(mChoicesId).updateChildren(finalChoice);
     }

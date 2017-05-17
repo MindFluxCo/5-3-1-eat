@@ -7,9 +7,6 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.places.Places;
 
-/**
- * Created by LucasVasquez on 5/11/17.
- */
 
 public class PlacesAutoFill extends MainActivity implements GoogleApiClient.OnConnectionFailedListener {
 
