@@ -28,7 +28,6 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-
     public int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
     //Places API Variables
     public String mPlaceName;
@@ -68,19 +67,13 @@ public class MainActivity extends AppCompatActivity {
     private Boolean isChoice5Filled = false;
     private AdView mAdView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-//        final ViewGroup transitionsContainer = (ViewGroup) findViewById(R.id.activity_main);
-//
-//        transitionsContainer.addView(editChoice1);
-//        transitionsContainer.addView(editChoice2);
-//        transitionsContainer.addView(editChoice3);
-//        transitionsContainer.addView(editChoice4);
-//        transitionsContainer.addView(editChoice5);
 
         editChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -206,14 +199,13 @@ public class MainActivity extends AppCompatActivity {
 
                     FirebaseUtility.updateChoices(choice1, choice2, choice3, choice4, choice5);
 
+
                     com.transitionseverywhere.TransitionManager.beginDelayedTransition(main_activity, new Slide(Gravity.RIGHT));
                     main_activity.setVisibility(visible ? View.VISIBLE : View.GONE);
 
 
                     Intent intent = new Intent(v.getContext(), VenueOptions.class);
                     startActivity(intent);
-
-//                    handle transitions
 
 
                 } else {
