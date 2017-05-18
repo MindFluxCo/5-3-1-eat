@@ -11,10 +11,10 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_1"
-        android:elevation="13dp"
-        android:padding="30dp"
+        android:elevation="@dimen/text_view_elevation"
+        android:padding="@dimen/text_view_padding"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_view_text_size"
         android:visibility="invisible" />
 
 
@@ -24,10 +24,10 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_2"
-        android:elevation="13dp"
-        android:padding="30dp"
+        android:elevation="@dimen/text_view_elevation"
+        android:padding="@dimen/text_view_padding"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_view_text_size"
         android:visibility="invisible" />
 
 
@@ -37,10 +37,10 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_3"
-        android:elevation="13dp"
-        android:padding="30dp"
+        android:elevation="@dimen/text_view_elevation"
+        android:padding="@dimen/text_view_padding"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_view_text_size"
         android:visibility="invisible" />
 
 
@@ -50,10 +50,10 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_4"
-        android:elevation="13dp"
-        android:padding="30dp"
+        android:elevation="@dimen/text_view_elevation"
+        android:padding="@dimen/text_view_padding"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_view_text_size"
         android:visibility="invisible" />
 
     <TextView
@@ -62,10 +62,10 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/venue_option_5"
-        android:elevation="13dp"
-        android:padding="30dp"
+        android:elevation="@dimen/text_view_elevation"
+        android:padding="@dimen/text_view_padding"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_view_text_size"
         android:visibility="invisible" />
 
 
@@ -74,6 +74,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/update_venues"
-        android:hint="@string/update_venues"
         android:onClick="venueOptions5" />
 </LinearLayout>
