@@ -25,8 +25,22 @@
 
     <!--widget strings-->
     <string name="appwidget_text1">No Venues</string>
-    <string name="appwidget_text2">click to get started</string>
+    <string name="appwidget_text2">Quick Pick</string>
     <string name="add_widget">Add widget</string>
     <string name="widget_default_text">TextView</string>
+
+    <!--Random Restaraunts for Widget-->
+    <string name="mcdonalds">McDonald\'s</string>
+    <string name="jack_box">Jack in the Box</string>
+    <string name="taco_bell">Taco Bell</string>
+    <string name="subway">Subway</string>
+    <string name="burger_king">Burger King</string>
+    <string name="applebees">Applebee\'s</string>
+    <string name="chilis">Chili\s</string>
+    <string name="arbys">Arby\'s</string>
+
+
+
+
 
 </resources>
