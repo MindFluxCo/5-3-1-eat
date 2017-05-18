@@ -35,101 +35,90 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView"
             android:clickable="true"
             android:contentDescription="@string/venue_option_1"
-            android:elevation="13dp"
-            android:padding="20dp"
+            android:elevation="@dimen/text_view_elevation"
+            android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_1"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="@dimen/text_view_text_size" />
 
         <TextView
             android:id="@+id/editChoice2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/editChoice1"
             android:clickable="true"
             android:contentDescription="@string/venue_option_2"
-            android:elevation="13dp"
-            android:padding="20dp"
+            android:elevation="@dimen/text_view_elevation"
+            android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_2"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="@dimen/text_view_text_size" />
 
         <TextView
             android:id="@+id/editChoice3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/editChoice2"
             android:clickable="true"
             android:contentDescription="@string/venue_option_3"
-            android:elevation="13dp"
-            android:padding="20dp"
+            android:elevation="@dimen/text_view_elevation"
+            android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_3"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="@dimen/text_view_text_size" />
 
         <TextView
             android:id="@+id/editChoice4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editChoice3"
             android:clickable="true"
             android:contentDescription="@string/venue_option_4"
-            android:elevation="13dp"
-            android:padding="20dp"
+            android:elevation="@dimen/text_view_elevation"
+            android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_4"
             android:textAlignment="center"
-            android:textSize="24sp"
-            android:layout_below="@+id/editChoice3"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textSize="@dimen/text_view_text_size" />
 
         <TextView
             android:id="@+id/editChoice5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/editChoice4"
             android:clickable="true"
             android:contentDescription="@string/venue_option_5"
-            android:elevation="13dp"
-            android:padding="20dp"
+            android:elevation="@dimen/text_view_elevation"
+            android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_5"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:textSize="@dimen/text_view_text_size" />
 
 
         <Button
             android:id="@+id/button"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/button_main_height"
+            android:layout_height="@dimen/button_main_width"
             android:layout_below="@+id/editChoice5"
             android:layout_centerHorizontal="true"
             android:background="@drawable/button_state"
-            android:contentDescription="@string/start_531"
-            android:elevation="20dp" />
+            android:elevation="@dimen/button_elevation" />
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:contentDescription="@string/banner_ad"
             ads:adSize="BANNER"

@@ -1,6 +1,7 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -25,11 +26,11 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
 
     //When views are created, mark true/flase for text filling
-    public static Boolean isChoice1Clicked = false;
-    public static Boolean isChoice2Clicked = false;
-    public static Boolean isChoice3Clicked = false;
-    public static Boolean isChoice4Clicked = false;
-    public static Boolean isChoice5Clicked = false;
+    public static Boolean isChoice1Clicked;
+    public static Boolean isChoice2Clicked;
+    public static Boolean isChoice3Clicked;
+    public static Boolean isChoice4Clicked;
+    public static Boolean isChoice5Clicked;
 
     //Unique ID for Firebase Database Post
     public String userKey;
@@ -53,6 +54,12 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
+
+        isChoice1Clicked = false;
+        isChoice2Clicked = false;
+        isChoice3Clicked = false;
+        isChoice4Clicked = false;
+        isChoice5Clicked = false;
 
         tvChoice1.setVisibility(View.VISIBLE);
         tvChoice2.setVisibility(View.VISIBLE);
@@ -96,10 +103,15 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
 
                 tvChoice1.setText(choice1Name);
+                tvChoice1.setContentDescription(choice1Name);
                 tvChoice2.setText(choice2Name);
+                tvChoice2.setContentDescription(choice2Name);
                 tvChoice3.setText(choice3Name);
+                tvChoice3.setContentDescription(choice3Name);
                 tvChoice4.setText(choice4Name);
+                tvChoice4.setContentDescription(choice4Name);
                 tvChoice5.setText(choice5Name);
+                tvChoice5.setContentDescription(choice5Name);
 
             }
 
@@ -140,7 +152,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
         } else if (itemsTouched == 3) {
 
-            Toast.makeText(VenueOptions.this, "Hit the button to move on!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(VenueOptions.this, R.string.venue_options_button_toast, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -171,7 +183,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, UpdatedVenues.class);
             startActivity(intent);
         } else {
-            Toast.makeText(VenueOptions.this, "Please Make 3 Slections", Toast.LENGTH_SHORT).show();
+            Toast.makeText(VenueOptions.this, R.string.venue_options_toast, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -183,4 +195,9 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
         itemsTouched++;
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+    }
 }

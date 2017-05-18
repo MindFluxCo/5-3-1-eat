@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
     public int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
 
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else {
-                    Toast.makeText(MainActivity.this, "Please Type All Options", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.main_activity_button_toast, Toast.LENGTH_SHORT).show();
                 }
             }
         });

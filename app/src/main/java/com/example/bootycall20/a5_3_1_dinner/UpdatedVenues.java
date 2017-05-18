@@ -109,6 +109,7 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
 
                 if (isChoice1Clicked) {
                     tvChoice1.setText(choice1Name);
+                    tvChoice1.setContentDescription(choice1Name);
                     tvChoice1.setClickable(true);
                     tvChoice1.setVisibility(View.VISIBLE);
 
@@ -116,18 +117,21 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
                 if (isChoice2Clicked) {
                     tvChoice2.setText(choice2Name);
                     tvChoice2.setClickable(true);
+                    tvChoice2.setContentDescription(choice2Name);
                     tvChoice2.setVisibility(View.VISIBLE);
 
                 }
                 if (isChoice3Clicked) {
                     tvChoice3.setText(choice3Name);
                     tvChoice3.setClickable(true);
+                    tvChoice3.setContentDescription(choice3Name);
                     tvChoice3.setVisibility(View.VISIBLE);
 
                 }
                 if (isChoice4Clicked) {
                     tvChoice4.setText(choice4Name);
                     tvChoice4.setClickable(true);
+                    tvChoice4.setContentDescription(choice4Name);
                     tvChoice4.setVisibility(View.VISIBLE);
 
 
@@ -135,8 +139,8 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
                 if (isChoice5Clicked) {
                     tvChoice5.setText(choice5Name);
                     tvChoice5.setClickable(true);
+                    tvChoice5.setContentDescription(choice5Name);
                     tvChoice5.setVisibility(View.VISIBLE);
-
                 }
 
             }
@@ -174,7 +178,7 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(this, FinalVenue.class);
             startActivity(intent);
         } else {
-            Toast.makeText(UpdatedVenues.this, "Please Make a Selection", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdatedVenues.this, R.string.updated_venues_toast, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -219,7 +223,7 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
 
         } else if (itemsTouched == 1) {
 
-            Toast.makeText(UpdatedVenues.this, "Hit the button to move on!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UpdatedVenues.this, R.string.venue_options_button_toast, Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -59,7 +59,8 @@ public class FinalVenue extends AppCompatActivity {
         tvChoice3.setVisibility(View.VISIBLE);
 
         button2.setVisibility(View.VISIBLE);
-        button2.setText("Open in Maps...");
+        button2.setText(R.string.maps_button);
+        button2.setContentDescription("Open in Maps");
         button2.setClickable(true);
 
 
@@ -111,27 +112,37 @@ public class FinalVenue extends AppCompatActivity {
 
                 if (isFinalChoice1) {
                     tvChoice2.setText(choice1Name);
+                    tvChoice2.setContentDescription(choice1Name);
+                    tvChoice3.setContentDescription(choice1Adress);
                     tvChoice3.setText(choice1Adress);
                     FirebaseUtility.setFinalChoice(choice1Name, choice1Adress);
                 }
                 if (isFinalChoice2) {
                     tvChoice2.setText(choice2Name);
+                    tvChoice2.setContentDescription(choice2Name);
+                    tvChoice3.setContentDescription(choice2Adress);
                     tvChoice3.setText(choice2Adress);
                     FirebaseUtility.setFinalChoice(choice2Name, choice2Adress);
                 }
                 if (isFinalChoice3) {
                     tvChoice2.setText(choice3Name);
+                    tvChoice2.setContentDescription(choice3Name);
+                    tvChoice3.setContentDescription(choice3Adress);
                     tvChoice3.setText(choice3Adress);
                     FirebaseUtility.setFinalChoice(choice3Name, choice3Adress);
                 }
                 if (isFinalChoice4) {
                     tvChoice2.setText(choice4Name);
                     tvChoice3.setText(choice4Adress);
+                    tvChoice3.setContentDescription(choice4Adress);
+                    tvChoice2.setContentDescription(choice4Name);
                     FirebaseUtility.setFinalChoice(choice4Name, choice4Adress);
                 }
                 if (isFinalChoice5) {
                     tvChoice2.setText(choice5Name);
                     tvChoice3.setText(choice5Adress);
+                    tvChoice3.setContentDescription(choice5Adress);
+                    tvChoice2.setContentDescription(choice5Name);
                     FirebaseUtility.setFinalChoice(choice5Name, choice5Adress);
                 }
 
@@ -172,7 +183,7 @@ public class FinalVenue extends AppCompatActivity {
         if (geoIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(geoIntent);
         } else {
-            Toast.makeText(FinalVenue.this, "Please install a Maps Application", Toast.LENGTH_LONG);
+            Toast.makeText(FinalVenue.this, R.string.final_venue_no_map, Toast.LENGTH_LONG).show();
         }
 
 

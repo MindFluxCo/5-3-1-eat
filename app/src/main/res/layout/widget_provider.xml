@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/widget_margin"
         android:background="#607D8B"
         android:contentDescription="@string/appwidget_text1"
         android:text="@string/appwidget_text1"
@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/appwidget_text2"
         android:fontFamily="serif"
-        android:text="TextView"
+        android:text="@string/widget_default_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
         android:textColor="@color/primary_text"
         tools:text="@string/appwidget_text2" />
