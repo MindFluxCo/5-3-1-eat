@@ -14,7 +14,6 @@ import java.util.Random;
  * Implementation of App Widget functionality.
  */
 public class WidgetProvider extends AppWidgetProvider {
-
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
@@ -47,6 +46,9 @@ public class WidgetProvider extends AppWidgetProvider {
         views.setOnClickPendingIntent(R.id.appwidget_text2, pendingIntent);
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
+
+
+
     }
 
     @Override
