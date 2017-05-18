@@ -12,7 +12,6 @@ import android.widget.RemoteViews;
  */
 public class WidgetProvider extends AppWidgetProvider {
 
-    public boolean savedVenues = false;
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
@@ -35,6 +34,9 @@ public class WidgetProvider extends AppWidgetProvider {
         views.setOnClickPendingIntent(R.id.appwidget_text1, pendingIntent);
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
+
+
+
     }
 
     @Override
@@ -54,5 +56,6 @@ public class WidgetProvider extends AppWidgetProvider {
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
     }
+
 }
 

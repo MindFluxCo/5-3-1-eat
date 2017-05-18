@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">5-3-1-Dinner</string>
+    <string name="app_name" translatable="false">5-3-1-Dinner</string>
     <string name="action_settings">How to use 5-3-1</string>
 
     <!--XML strings-->
