@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,8 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.choice3) TextView tvChoice3;
     @BindView(R.id.choice4) TextView tvChoice4;
     @BindView(R.id.choice5) TextView tvChoice5;
+    @BindView(R.id.button2)
+    Button button2;
 
     private DatabaseReference mFirebaseDatabase;
 
@@ -70,6 +73,8 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
         tvChoice3.setOnClickListener(this);
         tvChoice4.setOnClickListener(this);
         tvChoice5.setOnClickListener(this);
+
+        button2.setText(R.string.move_on);
 
 
     }

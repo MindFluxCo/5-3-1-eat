@@ -60,7 +60,7 @@ public class FinalVenue extends AppCompatActivity {
 
         button2.setVisibility(View.VISIBLE);
         button2.setText(R.string.maps_button);
-        button2.setContentDescription("Open in Maps");
+        button2.setContentDescription(getApplicationContext().getString(R.string.maps_button));
         button2.setClickable(true);
 
 

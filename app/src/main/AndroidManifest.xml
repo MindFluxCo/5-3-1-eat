@@ -31,10 +31,14 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".UpdatedVenues"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".VenueOptions" />
         <activity
             android:name=".FinalVenue"
+            android:parentActivityName=".UpdatedVenues" />
+        <activity
+            android:name=".HowToActivity"
             android:parentActivityName=".MainActivity" />
+
 
         <!-- Activity required to show ad overlays. -->
         <activity
