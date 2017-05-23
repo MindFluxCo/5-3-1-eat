@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
+import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtilityTaskLoader.mChoicesId;
 
 
 public class VenueOptions extends AppCompatActivity implements View.OnClickListener {

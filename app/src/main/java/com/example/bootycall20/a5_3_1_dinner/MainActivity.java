@@ -200,7 +200,7 @@ public class  MainActivity extends AppCompatActivity {
                 if (isChoice1Filled && isChoice2Filled &&
                         isChoice3Filled && isChoice4Filled && isChoice5Filled) {
 
-                    FirebaseUtility.updateChoice(choice1, choice2, choice3, choice4, choice5);
+                    FirebaseUtilityTaskLoader.updateChoice(choice1, choice2, choice3, choice4, choice5);
                     Intent intent = new Intent(v.getContext(), VenueOptions.class);
                     startActivity(intent);
 
