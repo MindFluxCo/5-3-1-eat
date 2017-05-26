@@ -56,12 +56,7 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
 
-
-        tvChoice1.setVisibility(View.INVISIBLE);
-        tvChoice2.setVisibility(View.INVISIBLE);
-        tvChoice3.setVisibility(View.INVISIBLE);
-        tvChoice4.setVisibility(View.INVISIBLE);
-        tvChoice5.setVisibility(View.INVISIBLE);
+        setDefaultStates();
 
         button2.setVisibility(View.VISIBLE);
 
@@ -69,12 +64,6 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
         userKey = mChoicesId;
 
         itemsTouched = 0;
-
-        tvChoice1.setOnClickListener(this);
-        tvChoice2.setOnClickListener(this);
-        tvChoice3.setOnClickListener(this);
-        tvChoice4.setOnClickListener(this);
-        tvChoice5.setOnClickListener(this);
 
 
 
@@ -112,42 +101,12 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
                 tvChoice4.setClickable(false);
                 tvChoice5.setClickable(false);
 
+                prepareChoice(tvChoice1, isChoice1Clicked, choice1Name);
+                prepareChoice(tvChoice2, isChoice2Clicked, choice2Name);
+                prepareChoice(tvChoice3, isChoice3Clicked, choice3Name);
+                prepareChoice(tvChoice4, isChoice4Clicked, choice4Name);
+                prepareChoice(tvChoice5, isChoice5Clicked, choice5Name);
 
-                if (isChoice1Clicked) {
-                    tvChoice1.setText(choice1Name);
-                    tvChoice1.setContentDescription(choice1Name);
-                    tvChoice1.setClickable(true);
-                    tvChoice1.setVisibility(View.VISIBLE);
-
-                }
-                if (isChoice2Clicked) {
-                    tvChoice2.setText(choice2Name);
-                    tvChoice2.setClickable(true);
-                    tvChoice2.setContentDescription(choice2Name);
-                    tvChoice2.setVisibility(View.VISIBLE);
-
-                }
-                if (isChoice3Clicked) {
-                    tvChoice3.setText(choice3Name);
-                    tvChoice3.setClickable(true);
-                    tvChoice3.setContentDescription(choice3Name);
-                    tvChoice3.setVisibility(View.VISIBLE);
-
-                }
-                if (isChoice4Clicked) {
-                    tvChoice4.setText(choice4Name);
-                    tvChoice4.setClickable(true);
-                    tvChoice4.setContentDescription(choice4Name);
-                    tvChoice4.setVisibility(View.VISIBLE);
-
-
-                }
-                if (isChoice5Clicked) {
-                    tvChoice5.setText(choice5Name);
-                    tvChoice5.setClickable(true);
-                    tvChoice5.setContentDescription(choice5Name);
-                    tvChoice5.setVisibility(View.VISIBLE);
-                }
 
             }
 
@@ -234,6 +193,35 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
 
     }
 
+    //Method to set Text, Content Description, cickability, and visibility
+    private void prepareChoice (TextView choiceView, boolean choiceClicked, String choiceName){
+        //Selects which view is being filled
+        if(choiceClicked){
+            //sets view content
+            choiceView.setText(choiceName);
+            choiceView.setContentDescription(choiceName);
+            choiceView.setClickable(true);
+            choiceView.setVisibility(View.VISIBLE);
+
+        }
+    }
+
+    //Sets the views to their default states
+    private void setDefaultStates(){
+
+        tvChoice1.setVisibility(View.INVISIBLE);
+        tvChoice2.setVisibility(View.INVISIBLE);
+        tvChoice3.setVisibility(View.INVISIBLE);
+        tvChoice4.setVisibility(View.INVISIBLE);
+        tvChoice5.setVisibility(View.INVISIBLE);
+
+        tvChoice1.setOnClickListener(this);
+        tvChoice2.setOnClickListener(this);
+        tvChoice3.setOnClickListener(this);
+        tvChoice4.setOnClickListener(this);
+        tvChoice5.setOnClickListener(this);
+
+    }
 
 }
 
