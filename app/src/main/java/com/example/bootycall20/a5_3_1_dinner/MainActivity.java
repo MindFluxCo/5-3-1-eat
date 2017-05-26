@@ -236,7 +236,11 @@ public class  MainActivity extends AppCompatActivity {
 
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
                 Status status = PlaceAutocomplete.getStatus(this, data);
-                // TODO: Handle the error.
+                isChoice1Clicked = false;
+                isChoice2Clicked = false;
+                isChoice3Clicked = false;
+                isChoice4Clicked = false;
+                isChoice5Clicked = false;
                 Log.v("Places", status.getStatusMessage());
 
             } else if (resultCode == RESULT_CANCELED) {
@@ -245,36 +249,15 @@ public class  MainActivity extends AppCompatActivity {
 
                 // Mark as not clicked and not filled so user cannot move on to next screen
                 // until text is inputted
-                setFillClick();
+
+                isChoice1Clicked = false;
+                isChoice2Clicked = false;
+                isChoice3Clicked = false;
+                isChoice4Clicked = false;
+                isChoice5Clicked = false;
 
 
             }
-        }
-    }
-
-
-
-    private void setFillClick(){
-
-        if (isChoice1Clicked) {
-            isChoice1Clicked = false;
-            isChoice1Filled = false;
-        }
-        if (isChoice2Clicked) {
-            isChoice2Filled = false;
-            isChoice2Clicked = false;
-        }
-        if (isChoice3Clicked) {
-            isChoice3Filled = false;
-            isChoice3Clicked = false;
-        }
-        if (isChoice4Clicked) {
-            isChoice4Filled = false;
-            isChoice4Clicked = false;
-        }
-        if (isChoice5Clicked) {
-            isChoice5Filled = false;
-            isChoice5Clicked = false;
         }
     }
 
