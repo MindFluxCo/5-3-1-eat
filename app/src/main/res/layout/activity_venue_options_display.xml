@@ -81,6 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/update_venues"
+        android:text="@string/update_venues"
         android:onClick="venueOptions5" />
 </LinearLayout>
     </ScrollView>
