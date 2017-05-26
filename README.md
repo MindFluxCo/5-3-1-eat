@@ -14,12 +14,17 @@ Place your Google Places API Key into the manifest file, then you are good to go
 ### Using the App
 
 [insert How-To-Pick-5.image]
+
 [insert How-To-Pick-3.image]
+
 [insert How-To-Pick-1.image]
 
 ### Libraries
 
-Google Places API [link]
-Butterknife [link]
-Firebase Database [link]
+[Google Places API] (https://developers.google.com/places/ "Google Places API")
+
+[Butterknife] (http://jakewharton.github.io/butterknife/ "Butterknife")
+
+[Firebase Database] (https://firebase.google.com/docs/database/ "Firebase Database")
+
 
