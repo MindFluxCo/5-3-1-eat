@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="INSERT_GOOGLE_API_KEY" />
+            android:value="INSERT_PLACES_API_KEY" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -27,14 +27,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".VenueOptions"
+            android:name=".FiveOptions"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".UpdatedVenues"
-            android:parentActivityName=".VenueOptions" />
+            android:name=".ThreeOptions"
+            android:parentActivityName=".FiveOptions" />
         <activity
-            android:name=".FinalVenue"
-            android:parentActivityName=".UpdatedVenues" />
+            android:name=".FinalOptions"
+            android:parentActivityName=".ThreeOptions" />
         <activity
             android:name=".HowToActivity"
             android:parentActivityName=".MainActivity" />
