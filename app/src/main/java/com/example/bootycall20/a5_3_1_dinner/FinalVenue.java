@@ -38,7 +38,7 @@ public class FinalVenue extends AppCompatActivity {
     @BindView(R.id.choice3) TextView tvChoice3;
     @BindView(R.id.choice4) TextView tvChoice4;
     @BindView(R.id.choice5) TextView tvChoice5;
-    @BindView(R.id.button2) Button button2;
+    @BindView(R.id.button3) Button button3;
 
 
     private DatabaseReference mFirebaseDatabase;
@@ -58,10 +58,9 @@ public class FinalVenue extends AppCompatActivity {
         tvChoice3.setClickable(false);
         tvChoice3.setVisibility(View.VISIBLE);
 
-        button2.setVisibility(View.VISIBLE);
-        button2.setText(R.string.maps_button);
-        button2.setContentDescription("Open in Maps");
-        button2.setClickable(true);
+        button3.setVisibility(View.VISIBLE);
+        button3.setContentDescription(getApplicationContext().getString(R.string.maps_button));
+        button3.setClickable(true);
 
 
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();

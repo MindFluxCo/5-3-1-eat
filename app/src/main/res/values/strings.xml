@@ -18,12 +18,30 @@
     <string name="venue_options_button_toast" translatable="true">Hit the button to move on!</string>
     <string name="updated_venues_toast" translatable="true">Please make a selection</string>
     <string name="final_venue_no_map" translatable="true">Please install a maps application</string>
+  
+    <!--how to strings-->
+    <string name="how_to_use_531">How to use 5&#8211;3&#8211;1</string>
+    <string name="howto5">5</string>
+    <string name="howto3">3</string>
+    <string name="howto1">1</string>
+    <string name="open_maps_how_to">Finally, launch your selection in GoogleMaps to get some food!</string>
+    <string name="first_step">Type in 5 places that you would like to eat and select a location near you</string>
+    <string name="second_step">Have some one else choose three of your five places they would like to eat</string>
+    <string name="third_step">Select the final place as a mutually agreed upon venue </string>
 
 
-
-    <string name="banner_ad" translatable="true">Banner Ad</string>
-    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-
-
+    <string name="banner_ad">Banner Ad</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+  
+  
+    <!--Random Restaraunts for Widget-->
+    <string name="mcdonalds">McDonald\'s</string>
+    <string name="jack_box">Jack in the Box</string>
+    <string name="taco_bell">Taco Bell</string>
+    <string name="subway">Subway</string>
+    <string name="burger_king">Burger King</string>
+    <string name="applebees">Applebee\'s</string>
+    <string name="chilis">Chili\s</string>
+    <string name="arbys">Arby\'s</string>
 
 </resources>

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,14 +47,20 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.choice4) TextView tvChoice4;
     @BindView(R.id.choice5) TextView tvChoice5;
 
+    @BindView(R.id.button2)
+    Button button2;
+
     //Firebase database reference
     private DatabaseReference mFirebaseDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
+
+        button2.setVisibility(View.VISIBLE);
 
         isChoice1Clicked = false;
         isChoice2Clicked = false;

@@ -26,22 +26,21 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:contentDescription="@string/greeting"
-            android:text="@string/greeting"
+            android:contentDescription="@string/how_to_use_531"
+            android:text="@string/how_to_use_531"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
         <TextView
             android:id="@+id/editChoice1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView"
             android:clickable="true"
             android:contentDescription="@string/venue_option_1"
             android:elevation="@dimen/text_view_elevation"
             android:padding="@dimen/text_view_padding"
-            android:text="@string/venue_option_1"
+            android:text="@string/first_step"
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size" />
 
@@ -56,7 +55,7 @@
             android:contentDescription="@string/venue_option_2"
             android:elevation="@dimen/text_view_elevation"
             android:padding="@dimen/text_view_padding"
-            android:text="@string/venue_option_2"
+            android:text="@string/second_step"
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size" />
 
@@ -71,7 +70,7 @@
             android:contentDescription="@string/venue_option_3"
             android:elevation="@dimen/text_view_elevation"
             android:padding="@dimen/text_view_padding"
-            android:text="@string/venue_option_3"
+            android:text="@string/third_step"
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size" />
 
@@ -85,44 +84,40 @@
             android:contentDescription="@string/venue_option_4"
             android:elevation="@dimen/text_view_elevation"
             android:padding="@dimen/text_view_padding"
-            android:text="@string/venue_option_4"
+            android:text="@string/open_maps_how_to"
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size" />
 
         <TextView
-            android:id="@+id/editChoice5"
-            android:layout_width="match_parent"
+            android:id="@+id/howto5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/editChoice2"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editChoice4"
-            android:clickable="true"
-            android:contentDescription="@string/venue_option_5"
-            android:elevation="@dimen/text_view_elevation"
-            android:padding="@dimen/text_view_padding"
-            android:text="@string/venue_option_5"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_view_text_size" />
+            android:layout_alignTop="@+id/editChoice1"
+            android:text="@string/howto5"
+            android:textSize="40sp" />
 
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="@dimen/button_main_height"
-            android:layout_height="@dimen/button_main_width"
-            android:layout_below="@+id/editChoice5"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/initial_button_state"
-            android:elevation="@dimen/button_elevation" />
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/howto3"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_above="@+id/editChoice3"
             android:layout_alignParentStart="true"
-            android:contentDescription="@string/banner_ad"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id" />
+            android:layout_below="@+id/editChoice1"
+            android:text="@string/howto3"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/howto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editChoice4"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editChoice2"
+            android:text="@string/howto1"
+            android:textSize="40sp" />
+
 
     </RelativeLayout>
 </ScrollView>

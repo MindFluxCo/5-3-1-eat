@@ -1,5 +1,7 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
+import android.support.v7.app.AppCompatActivity;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -7,11 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class FirebaseUtility extends MainActivity {
+public class FirebaseUtility extends AppCompatActivity {
 
     public static FirebaseDatabase mFirebaseDatabase;
     public static DatabaseReference mChoicesRef;
     public static String mChoicesId;
+
+
 
 
     public static void updateChoice(ChoicesDetail userChoice1,
@@ -43,5 +47,6 @@ public class FirebaseUtility extends MainActivity {
 
         mChoicesRef.child(mChoicesId).updateChildren(finalChoice);
     }
+
 
 }
