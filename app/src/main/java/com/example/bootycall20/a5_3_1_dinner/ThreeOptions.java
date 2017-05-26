@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 
-public class UpdatedVenues extends AppCompatActivity implements View.OnClickListener {
+public class ThreeOptions extends AppCompatActivity implements View.OnClickListener {
 
     public static Boolean isFinalChoice1 = false;
     public static Boolean isFinalChoice2 = false;
@@ -89,11 +89,11 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
                 String choice4Name = choice4.name;
                 String choice5Name = choice5.name;
 
-                isChoice1Clicked = VenueOptions.isChoice1Clicked;
-                isChoice2Clicked = VenueOptions.isChoice2Clicked;
-                isChoice3Clicked = VenueOptions.isChoice3Clicked;
-                isChoice4Clicked = VenueOptions.isChoice4Clicked;
-                isChoice5Clicked = VenueOptions.isChoice5Clicked;
+                isChoice1Clicked = FiveOptions.isChoice1Clicked;
+                isChoice2Clicked = FiveOptions.isChoice2Clicked;
+                isChoice3Clicked = FiveOptions.isChoice3Clicked;
+                isChoice4Clicked = FiveOptions.isChoice4Clicked;
+                isChoice5Clicked = FiveOptions.isChoice5Clicked;
 
                 tvChoice1.setClickable(false);
                 tvChoice2.setClickable(false);
@@ -140,10 +140,10 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
 
     public void venueOptions5(View view) {
         if (itemsTouched == 1) {
-            Intent intent = new Intent(this, FinalVenue.class);
+            Intent intent = new Intent(this, FinalOptions.class);
             startActivity(intent);
         } else {
-            Toast.makeText(UpdatedVenues.this, R.string.updated_venues_toast, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ThreeOptions.this, R.string.updated_venues_toast, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -188,7 +188,7 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
 
         } else if (itemsTouched == 1) {
 
-            Toast.makeText(UpdatedVenues.this, R.string.venue_options_button_toast, Toast.LENGTH_SHORT).show();
+            Toast.makeText(ThreeOptions.this, R.string.venue_options_button_toast, Toast.LENGTH_SHORT).show();
         }
 
     }

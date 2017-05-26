@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 
-public class FinalVenue extends AppCompatActivity {
+public class FinalOptions extends AppCompatActivity {
 
     public String userKey;
 
@@ -95,11 +95,11 @@ public class FinalVenue extends AppCompatActivity {
                 String choice5Adress = choice1.adress;
 
 
-                isFinalChoice1 = UpdatedVenues.isFinalChoice1;
-                isFinalChoice2 = UpdatedVenues.isFinalChoice2;
-                isFinalChoice3 = UpdatedVenues.isFinalChoice3;
-                isFinalChoice4 = UpdatedVenues.isFinalChoice4;
-                isFinalChoice5 = UpdatedVenues.isFinalChoice5;
+                isFinalChoice1 = ThreeOptions.isFinalChoice1;
+                isFinalChoice2 = ThreeOptions.isFinalChoice2;
+                isFinalChoice3 = ThreeOptions.isFinalChoice3;
+                isFinalChoice4 = ThreeOptions.isFinalChoice4;
+                isFinalChoice5 = ThreeOptions.isFinalChoice5;
 
 
                 tvChoice1.setClickable(false);
@@ -182,7 +182,7 @@ public class FinalVenue extends AppCompatActivity {
         if (geoIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(geoIntent);
         } else {
-            Toast.makeText(FinalVenue.this, R.string.final_venue_no_map, Toast.LENGTH_LONG).show();
+            Toast.makeText(FinalOptions.this, R.string.final_venue_no_map, Toast.LENGTH_LONG).show();
         }
 
 

@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 
-public class VenueOptions extends AppCompatActivity implements View.OnClickListener {
+public class FiveOptions extends AppCompatActivity implements View.OnClickListener {
 
 
     //When views are created, mark true/flase for text filling
@@ -159,7 +159,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
         } else if (itemsTouched == 3) {
 
-            Toast.makeText(VenueOptions.this, R.string.venue_options_button_toast, Toast.LENGTH_SHORT).show();
+            Toast.makeText(FiveOptions.this, R.string.venue_options_button_toast, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -187,10 +187,10 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
 
     public void venueOptions5(View view) {
         if (itemsTouched == 3) {
-            Intent intent = new Intent(this, UpdatedVenues.class);
+            Intent intent = new Intent(this, ThreeOptions.class);
             startActivity(intent);
         } else {
-            Toast.makeText(VenueOptions.this, R.string.venue_options_toast, Toast.LENGTH_SHORT).show();
+            Toast.makeText(FiveOptions.this, R.string.venue_options_toast, Toast.LENGTH_SHORT).show();
         }
 
     }
