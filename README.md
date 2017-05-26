@@ -1,7 +1,7 @@
 # 5-3-1-Dinner
 Decide on a place to eat
 
-###What
+### What
 
 5-3-1 Dinner is an app that helps you decide where you want to go.  Tied with the concept 3-2-1 Go! 
 It helps you narrow down your choices, from 5, to 3, down to one.  You select the nearest one to you using the
