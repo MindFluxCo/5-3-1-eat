@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtilityTaskLoader.mChoicesId;
+import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
 
 
 public class VenueOptions extends AppCompatActivity implements View.OnClickListener {
@@ -60,7 +60,7 @@ public class VenueOptions extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
 
-        button2.setText(R.string.move_on);
+        button2.setVisibility(View.VISIBLE);
 
         isChoice1Clicked = false;
         isChoice2Clicked = false;

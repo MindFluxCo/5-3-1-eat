@@ -111,7 +111,7 @@
             android:layout_height="@dimen/button_main_width"
             android:layout_below="@+id/editChoice5"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/button_state"
+            android:background="@drawable/initial_button_state"
             android:elevation="@dimen/button_elevation" />
 
         <com.google.android.gms.ads.AdView

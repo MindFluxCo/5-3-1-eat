@@ -63,6 +63,8 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
         tvChoice4.setVisibility(View.INVISIBLE);
         tvChoice5.setVisibility(View.INVISIBLE);
 
+        button2.setVisibility(View.VISIBLE);
+
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
         userKey = mChoicesId;
 
@@ -74,7 +76,6 @@ public class UpdatedVenues extends AppCompatActivity implements View.OnClickList
         tvChoice4.setOnClickListener(this);
         tvChoice5.setOnClickListener(this);
 
-        button2.setText(R.string.move_on);
 
 
     }

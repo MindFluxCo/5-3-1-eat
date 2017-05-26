@@ -1,7 +1,6 @@
 package com.example.bootycall20.a5_3_1_dinner;
 
-import android.content.AsyncTaskLoader;
-import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -10,15 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class FirebaseUtilityTaskLoader extends AsyncTaskLoader {
+public class FirebaseUtility extends AppCompatActivity {
 
     public static FirebaseDatabase mFirebaseDatabase;
     public static DatabaseReference mChoicesRef;
     public static String mChoicesId;
 
-    public FirebaseUtilityTaskLoader(Context context) {
-        super(context);
-    }
+
 
 
     public static void updateChoice(ChoicesDetail userChoice1,
@@ -51,8 +48,5 @@ public class FirebaseUtilityTaskLoader extends AsyncTaskLoader {
         mChoicesRef.child(mChoicesId).updateChildren(finalChoice);
     }
 
-    @Override
-    public Object loadInBackground() {
-        return null;
-    }
+
 }

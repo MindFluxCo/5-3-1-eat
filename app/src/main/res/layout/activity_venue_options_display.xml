@@ -94,8 +94,20 @@
         android:layout_height="@dimen/button_main_width"
         android:layout_below="@+id/choice5"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/icon_button_state"
+        android:background="@drawable/updated_button_state"
         android:elevation="@dimen/button_elevation"
-        android:onClick="venueOptions5" />
+        android:onClick="venueOptions5"
+        android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="@dimen/button_main_height"
+            android:layout_height="@dimen/button_main_width"
+            android:layout_below="@+id/choice5"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/maps_button_state"
+            android:elevation="@dimen/button_elevation"
+            android:onClick="venueOptions5"
+            android:visibility="invisible"/>
     </RelativeLayout>
     </ScrollView>
