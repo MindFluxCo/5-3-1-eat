@@ -3,44 +3,26 @@
     <string name="action_settings">How to use 5&#8211;3&#8211;1</string>
 
     <!-- Layout ID's-->
-    <string name="venue_option_1">First Choice</string>
-    <string name="venue_option_2">Second Choice</string>
-    <string name="venue_option_3">Third Choice</string>
-    <string name="venue_option_4">Fourth Choice</string>
-    <string name="venue_option_5">Fifth Choice</string>
-    <string name="update_venues">Update Choices</string>
-    <string name="maps_button">Open in Maps&#8230;</string>
-    <string name="start_531">Start 5&#8211;3&#8211;1</string>
-    <string name="greeting">Enter Five Venues to Start 5&#8211;3&#8211;1</string>
+    <string name="venue_option_1" translatable="true">First Choice</string>
+    <string name="venue_option_2" translatable="true">Second Choice</string>
+    <string name="venue_option_3" translatable="true">Third Choice</string>
+    <string name="venue_option_4" translatable="true">Fourth Choice</string>
+    <string name="venue_option_5" translatable="true">Fifth Choice</string>
+    <string name="update_venues" translatable="true">Update Choices</string>
+    <string name="maps_button" translatable="true">Open in Maps&#8230;</string>
+    <string name="start_531"> translatable="true"Start 5&#8211;3&#8211;1</string>
+    <string name="greeting" translatable="true"> Enter Five Venues to Start 5&#8211;3&#8211;1</string>
 
-    <string name="main_activity_button_toast">Please type all options</string>
-    <string name="venue_options_toast">Please Make 3 Selections</string>
-    <string name="venue_options_button_toast">Hit the button to move on!</string>
-    <string name="updated_venues_toast">Please make a selection</string>
-    <string name="final_venue_no_map">Please install a maps application</string>
-
-
-
-    <string name="banner_ad">Banner Ad</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
-
-    <!--widget strings-->
-    <string name="appwidget_text1">No Venues</string>
-    <string name="appwidget_text2">Quick Pick</string>
-    <string name="add_widget">Add widget</string>
-    <string name="widget_default_text">TextView</string>
-
-    <!--Random Restaraunts for Widget-->
-    <string name="mcdonalds">McDonald\'s</string>
-    <string name="jack_box">Jack in the Box</string>
-    <string name="taco_bell">Taco Bell</string>
-    <string name="subway">Subway</string>
-    <string name="burger_king">Burger King</string>
-    <string name="applebees">Applebee\'s</string>
-    <string name="chilis">Chili\s</string>
-    <string name="arbys">Arby\'s</string>
+    <string name="main_activity_button_toast" translatable="true">Please type all options</string>
+    <string name="venue_options_toast" translatable="true">Please Make 3 Selections</string>
+    <string name="venue_options_button_toast" translatable="true">Hit the button to move on!</string>
+    <string name="updated_venues_toast" translatable="true">Please make a selection</string>
+    <string name="final_venue_no_map" translatable="true">Please install a maps application</string>
 
 
+
+    <string name="banner_ad" translatable="true">Banner Ad</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
 
 
 
