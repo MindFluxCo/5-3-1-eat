@@ -21,10 +21,10 @@ Place your Google Places API Key into the manifest file, then you are good to go
 
 ### Libraries
 
-[Google Places API] (https://developers.google.com/places/ "Google Places API")
+[Google Places API](https://developers.google.com/places/ "Google Places API")
 
-[Butterknife] (http://jakewharton.github.io/butterknife/ "Butterknife")
+[Butterknife](http://jakewharton.github.io/butterknife/ "Butterknife")
 
-[Firebase Database] (https://firebase.google.com/docs/database/ "Firebase Database")
+[Firebase Database](https://firebase.google.com/docs/database/ "Firebase Database")
 
 
