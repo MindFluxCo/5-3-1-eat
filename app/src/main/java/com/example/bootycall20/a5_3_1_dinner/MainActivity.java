@@ -21,6 +21,7 @@ import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 public class  MainActivity extends AppCompatActivity {
@@ -57,6 +58,8 @@ public class  MainActivity extends AppCompatActivity {
     public Boolean isChoice4Clicked = false;
     public Boolean isChoice5Clicked = false;
 
+
+
     //View Bindings
     @BindView(R.id.editChoice1) TextView editChoice1;
     @BindView(R.id.editChoice2) TextView editChoice2;
@@ -82,109 +85,6 @@ public class  MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-
-        editChoice1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isChoice1Clicked = true;
-                try {
-                    Intent intent =
-                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
-                                    .build(MainActivity.this);
-                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
-
-                } catch (GooglePlayServicesRepairableException e) {
-                    // TODO: Handle the error.
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    // TODO: Handle the error.
-                }
-            }
-        });
-
-        editChoice2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isChoice2Clicked = true;
-
-                try {
-                    Intent intent =
-                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
-                                    .build(MainActivity.this);
-                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
-
-                } catch (GooglePlayServicesRepairableException e) {
-                    // TODO: Handle the error.
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    // TODO: Handle the error.
-                }
-
-
-            }
-        });
-
-        editChoice3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isChoice3Clicked = true;
-
-                try {
-                    Intent intent =
-                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
-                                    .build(MainActivity.this);
-                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
-
-                } catch (GooglePlayServicesRepairableException e) {
-                    // TODO: Handle the error.
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    // TODO: Handle the error.
-                }
-
-
-            }
-        });
-
-        editChoice4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isChoice4Clicked = true;
-
-                try {
-                    Intent intent =
-                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
-                                    .build(MainActivity.this);
-                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
-
-                } catch (GooglePlayServicesRepairableException e) {
-                    // TODO: Handle the error.
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    // TODO: Handle the error.
-                }
-
-
-            }
-        });
-
-        editChoice5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isChoice5Clicked = true;
-
-                try {
-                    Intent intent =
-                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
-                                    .build(MainActivity.this);
-                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
-
-                } catch (GooglePlayServicesRepairableException e) {
-                    // TODO: Handle the error.
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    // TODO: Handle the error.
-                }
-
-
-            }
-        });
 
         //Loads Ads(test) Into AdView
         mAdView = (AdView) findViewById(R.id.adView);
@@ -213,6 +113,33 @@ public class  MainActivity extends AppCompatActivity {
 
 
     }
+
+    @OnClick({R.id.editChoice1, R.id.editChoice2, R.id.editChoice3, R.id.editChoice4,
+            R.id.editChoice5,})
+    public void setChoices(View v) {
+
+        if(v == editChoice1){
+            isChoice1Clicked = true;
+            startPlacesUi();
+        }
+        if(v == editChoice2){
+            isChoice2Clicked = true;
+            startPlacesUi();
+        }
+        if(v == editChoice3){
+            isChoice3Clicked = true;
+            startPlacesUi();
+        }
+        if(v == editChoice4){
+            isChoice4Clicked = true;
+            startPlacesUi();
+        }
+        if(v == editChoice5){
+            isChoice5Clicked = true;
+            startPlacesUi();
+        }
+    }
+
 
 
     @Override
@@ -318,28 +245,50 @@ public class  MainActivity extends AppCompatActivity {
 
                 // Mark as not clicked and not filled so user cannot move on to next screen
                 // until text is inputted
+                setFillClick();
 
-                if (isChoice1Clicked) {
-                    isChoice1Clicked = false;
-                    isChoice1Filled = false;
-                }
-                if (isChoice2Clicked) {
-                    isChoice2Filled = false;
-                    isChoice2Clicked = false;
-                }
-                if (isChoice3Clicked) {
-                    isChoice3Filled = false;
-                    isChoice3Clicked = false;
-                }
-                if (isChoice4Clicked) {
-                    isChoice4Filled = false;
-                    isChoice4Clicked = false;
-                }
-                if (isChoice5Clicked) {
-                    isChoice5Filled = false;
-                    isChoice5Clicked = false;
-                }
+
             }
+        }
+    }
+
+
+
+    private void setFillClick(){
+
+        if (isChoice1Clicked) {
+            isChoice1Clicked = false;
+            isChoice1Filled = false;
+        }
+        if (isChoice2Clicked) {
+            isChoice2Filled = false;
+            isChoice2Clicked = false;
+        }
+        if (isChoice3Clicked) {
+            isChoice3Filled = false;
+            isChoice3Clicked = false;
+        }
+        if (isChoice4Clicked) {
+            isChoice4Filled = false;
+            isChoice4Clicked = false;
+        }
+        if (isChoice5Clicked) {
+            isChoice5Filled = false;
+            isChoice5Clicked = false;
+        }
+    }
+
+    private void startPlacesUi(){
+        try {
+            Intent intent =
+                    new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                            .build(MainActivity.this);
+            startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+
+        } catch (GooglePlayServicesRepairableException e) {
+            // TODO: Handle the error.
+        } catch (GooglePlayServicesNotAvailableException e) {
+            // TODO: Handle the error.
         }
     }
 }
