@@ -89,7 +89,7 @@
 
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/refresh_button"
         android:layout_width="@dimen/button_main_height"
         android:layout_height="@dimen/button_main_width"
         android:layout_below="@+id/choice5"
@@ -100,7 +100,7 @@
         android:visibility="invisible"/>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/maps_button"
             android:layout_width="@dimen/button_main_height"
             android:layout_height="@dimen/button_main_width"
             android:layout_below="@+id/choice5"

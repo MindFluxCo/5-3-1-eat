@@ -47,8 +47,8 @@ public class FiveOptions extends AppCompatActivity implements View.OnClickListen
     @BindView(R.id.choice4) TextView tvChoice4;
     @BindView(R.id.choice5) TextView tvChoice5;
 
-    @BindView(R.id.button2)
-    Button button2;
+    @BindView(R.id.refresh_button)
+    Button refresh_button;
 
     //Firebase database reference
     private DatabaseReference mFirebaseDatabase;
@@ -60,7 +60,7 @@ public class FiveOptions extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_venue_options_display);
         ButterKnife.bind(this);
 
-        button2.setVisibility(View.VISIBLE);
+        refresh_button.setVisibility(View.VISIBLE);
 
         isChoice1Clicked = false;
         isChoice2Clicked = false;

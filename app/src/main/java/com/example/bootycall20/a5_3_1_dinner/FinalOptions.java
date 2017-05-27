@@ -38,7 +38,7 @@ public class FinalOptions extends AppCompatActivity {
     @BindView(R.id.choice3) TextView tvChoice3;
     @BindView(R.id.choice4) TextView tvChoice4;
     @BindView(R.id.choice5) TextView tvChoice5;
-    @BindView(R.id.button3) Button button3;
+    @BindView(R.id.maps_button) Button maps_button;
 
 
     private DatabaseReference mFirebaseDatabase;
@@ -58,9 +58,9 @@ public class FinalOptions extends AppCompatActivity {
         tvChoice3.setClickable(false);
         tvChoice3.setVisibility(View.VISIBLE);
 
-        button3.setVisibility(View.VISIBLE);
-        button3.setContentDescription(getApplicationContext().getString(R.string.maps_button));
-        button3.setClickable(true);
+        maps_button.setVisibility(View.VISIBLE);
+        maps_button.setContentDescription(getApplicationContext().getString(R.string.maps_button));
+        maps_button.setClickable(true);
 
 
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();

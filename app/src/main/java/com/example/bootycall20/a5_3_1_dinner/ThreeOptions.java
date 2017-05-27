@@ -45,8 +45,8 @@ public class ThreeOptions extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.choice3) TextView tvChoice3;
     @BindView(R.id.choice4) TextView tvChoice4;
     @BindView(R.id.choice5) TextView tvChoice5;
-    @BindView(R.id.button2)
-    Button button2;
+    @BindView(R.id.refresh_button)
+    Button refresh_button;
 
     private DatabaseReference mFirebaseDatabase;
 
@@ -58,7 +58,7 @@ public class ThreeOptions extends AppCompatActivity implements View.OnClickListe
 
         setDefaultStates();
 
-        button2.setVisibility(View.VISIBLE);
+        refresh_button.setVisibility(View.VISIBLE);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
         userKey = mChoicesId;
