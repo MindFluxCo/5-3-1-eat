@@ -28,7 +28,9 @@
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/greeting"
             android:text="@string/greeting"
-            android:textAppearance="@style/TextAppearance.AppCompat" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_margin="@dimen/text_view_margin"
+            />
 
         <TextView
             android:id="@+id/editChoice1"
@@ -43,13 +45,14 @@
             android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_1"
             android:textAlignment="center"
-            android:textSize="@dimen/text_view_text_size" />
+            android:textSize="@dimen/text_view_text_size"
+            android:layout_margin="@dimen/text_view_margin"
+            android:background="@drawable/textview_boreders"/>
 
         <TextView
             android:id="@+id/editChoice2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/editChoice1"
             android:clickable="true"
@@ -58,7 +61,9 @@
             android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_2"
             android:textAlignment="center"
-            android:textSize="@dimen/text_view_text_size" />
+            android:textSize="@dimen/text_view_text_size"
+            android:layout_margin="@dimen/text_view_margin"
+            android:background="@drawable/textview_boreders"/>
 
         <TextView
             android:id="@+id/editChoice3"
@@ -73,7 +78,9 @@
             android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_3"
             android:textAlignment="center"
-            android:textSize="@dimen/text_view_text_size" />
+            android:textSize="@dimen/text_view_text_size"
+            android:layout_margin="@dimen/text_view_margin"
+            android:background="@drawable/textview_boreders"/>
 
         <TextView
             android:id="@+id/editChoice4"
@@ -87,7 +94,9 @@
             android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_4"
             android:textAlignment="center"
-            android:textSize="@dimen/text_view_text_size" />
+            android:textSize="@dimen/text_view_text_size"
+            android:layout_margin="@dimen/text_view_margin"
+            android:background="@drawable/textview_boreders"/>
 
         <TextView
             android:id="@+id/editChoice5"
@@ -102,7 +111,9 @@
             android:padding="@dimen/text_view_padding"
             android:text="@string/venue_option_5"
             android:textAlignment="center"
-            android:textSize="@dimen/text_view_text_size" />
+            android:textSize="@dimen/text_view_text_size"
+            android:layout_margin="@dimen/text_view_margin"
+            android:background="@drawable/textview_boreders"/>
 
 
         <Button
@@ -112,6 +123,7 @@
             android:layout_below="@+id/editChoice5"
             android:layout_centerHorizontal="true"
             android:background="@drawable/initial_button_state"
+            android:layout_margin="@dimen/text_view_margin"
             android:elevation="@dimen/button_elevation" />
 
         <com.google.android.gms.ads.AdView
@@ -120,6 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
+
             android:contentDescription="@string/banner_ad"
             ads:adSize="BANNER"
             ads:adUnitId="@string/banner_ad_unit_id" />
