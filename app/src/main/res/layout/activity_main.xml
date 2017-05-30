@@ -47,7 +47,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size"
             android:layout_margin="@dimen/text_view_margin"
-            android:background="@drawable/textview_boreders"/>
+            android:background="@drawable/textview_borders"/>
 
         <TextView
             android:id="@+id/editChoice2"
@@ -63,7 +63,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size"
             android:layout_margin="@dimen/text_view_margin"
-            android:background="@drawable/textview_boreders"/>
+            android:background="@drawable/textview_borders"/>
 
         <TextView
             android:id="@+id/editChoice3"
@@ -80,7 +80,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size"
             android:layout_margin="@dimen/text_view_margin"
-            android:background="@drawable/textview_boreders"/>
+            android:background="@drawable/textview_borders"/>
 
         <TextView
             android:id="@+id/editChoice4"
@@ -96,7 +96,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size"
             android:layout_margin="@dimen/text_view_margin"
-            android:background="@drawable/textview_boreders"/>
+            android:background="@drawable/textview_borders"/>
 
         <TextView
             android:id="@+id/editChoice5"
@@ -113,7 +113,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/text_view_text_size"
             android:layout_margin="@dimen/text_view_margin"
-            android:background="@drawable/textview_boreders"/>
+            android:background="@drawable/textview_borders"/>
 
 
         <Button

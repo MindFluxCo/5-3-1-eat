@@ -149,7 +149,7 @@ public class ThreeOptions extends AppCompatActivity implements View.OnClickListe
 
     private void buttonsArePressed(View view) {
 
-        view.setBackgroundColor(getResources().getColor(R.color.primary));
+        view.setBackgroundResource(R.drawable.textview_borders_pressed);
         itemsTouched++;
     }
 

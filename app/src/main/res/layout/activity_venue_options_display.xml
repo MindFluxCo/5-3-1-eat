@@ -27,7 +27,7 @@
         android:textSize="@dimen/text_view_text_size"
         android:layout_margin="@dimen/text_view_margin"
         android:visibility="invisible"
-        android:background="@drawable/textview_boreders" />
+        android:background="@drawable/textview_borders" />
 
 
     <TextView
@@ -44,7 +44,7 @@
         android:textSize="@dimen/text_view_text_size"
         android:layout_margin="@dimen/text_view_margin"
         android:visibility="invisible"
-        android:background="@drawable/textview_boreders"/>
+        android:background="@drawable/textview_borders"/>
 
 
     <TextView
@@ -61,7 +61,7 @@
         android:textSize="@dimen/text_view_text_size"
         android:layout_margin="@dimen/text_view_margin"
         android:visibility="invisible"
-        android:background="@drawable/textview_boreders"/>
+        android:background="@drawable/textview_borders"/>
 
 
     <TextView
@@ -78,7 +78,7 @@
         android:textSize="@dimen/text_view_text_size"
         android:layout_margin="@dimen/text_view_margin"
         android:visibility="invisible"
-        android:background="@drawable/textview_boreders"/>
+        android:background="@drawable/textview_borders"/>
 
     <TextView
         android:id="@+id/choice5"
@@ -94,7 +94,7 @@
         android:textSize="@dimen/text_view_text_size"
         android:layout_margin="@dimen/text_view_margin"
         android:visibility="invisible"
-        android:background="@drawable/textview_boreders"/>
+        android:background="@drawable/textview_borders"/>
 
 
     <Button
