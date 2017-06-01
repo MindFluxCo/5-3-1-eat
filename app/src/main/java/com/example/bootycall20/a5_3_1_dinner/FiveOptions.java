@@ -198,7 +198,7 @@ public class FiveOptions extends AppCompatActivity implements View.OnClickListen
     //When a view is pressed ad a background color to indicate selections
     private void buttonsArePressed(View view) {
 
-        view.setBackgroundColor(getResources().getColor(R.color.primary));
+        view.setBackgroundResource(R.drawable.textview_borders_pressed);
         itemsTouched++;
     }
 
