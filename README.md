@@ -13,7 +13,7 @@ Place your Google Places API Key into the manifest file, then you are good to go
 
 ### Using the App
 
-![alt text](/Screen_ 1.png?raw=true "How-to 1")
+![alt text](/Screen_1 .png?raw=true "How-to 1")
 
 ![alt text](/Screen_2.png?raw=true "How-to 2")
 
