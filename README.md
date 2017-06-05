@@ -13,11 +13,13 @@ Place your Google Places API Key into the manifest file, then you are good to go
 
 ### Using the App
 
-[insert How-To-Pick-5.image]
+![alt text](/Screen_1.png?raw=true "How-to 1")
 
-[insert How-To-Pick-3.image]
+![alt text](/Screen_2.png?raw=true "How-to 2")
 
-[insert How-To-Pick-1.image]
+![alt text](/Screen_3.png?raw=true "How-to 3")
+
+![alt text](/Screen_4.png?raw=true "How-to 4")
 
 ### Libraries
 
