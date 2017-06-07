@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bootycall20.a5_3_1_dinner">
+    package="com.crevas.and.go_5_3_1">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- Used to avoid sending an ad request if there is no connectivity. -->
@@ -19,7 +19,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".MainActivity"
+        <activity android:name="com.crevas.and.go_5_3_1.MainActivity"
                     android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,20 +28,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FiveOptions"
-            android:parentActivityName=".MainActivity"
+            android:name="com.crevas.and.go_5_3_1.FiveOptions"
+            android:parentActivityName="com.crevas.and.go_5_3_1.MainActivity"
             android:configChanges="orientation|screenSize"/>
         <activity
-            android:name=".ThreeOptions"
-            android:parentActivityName=".FiveOptions"
+            android:name="com.crevas.and.go_5_3_1.ThreeOptions"
+            android:parentActivityName="com.crevas.and.go_5_3_1.FiveOptions"
             android:configChanges="orientation|screenSize"/>
         <activity
-            android:name=".FinalOptions"
-            android:parentActivityName=".ThreeOptions"
+            android:name="com.crevas.and.go_5_3_1.FinalOptions"
+            android:parentActivityName="com.crevas.and.go_5_3_1.ThreeOptions"
             android:configChanges="orientation|screenSize"/>
         <activity
-            android:name=".HowToActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.crevas.and.go_5_3_1.HowToActivity"
+            android:parentActivityName="com.crevas.and.go_5_3_1.MainActivity" />
 
 
         <!-- Activity required to show ad overlays. -->

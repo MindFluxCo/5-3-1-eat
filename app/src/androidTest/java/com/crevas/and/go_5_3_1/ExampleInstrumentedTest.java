@@ -1,4 +1,4 @@
-package com.example.bootycall20.a5_3_1_dinner;
+package com.crevas.and.go_5_3_1;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.bootycall20.a5_3_1_dinner", appContext.getPackageName());
+        assertEquals("com.crevas.bootycall20.go_5_3_1", appContext.getPackageName());
     }
 }

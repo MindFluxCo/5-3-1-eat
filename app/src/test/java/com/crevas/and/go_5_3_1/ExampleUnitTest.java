@@ -1,4 +1,4 @@
-package com.example.bootycall20.a5_3_1_dinner;
+package com.crevas.and.go_5_3_1;
 
 import org.junit.Test;
 

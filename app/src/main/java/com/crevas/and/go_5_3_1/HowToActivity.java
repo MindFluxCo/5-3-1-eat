@@ -1,4 +1,4 @@
-package com.example.bootycall20.a5_3_1_dinner;
+package com.crevas.and.go_5_3_1;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

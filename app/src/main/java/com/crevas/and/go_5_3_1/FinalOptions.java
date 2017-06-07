@@ -1,4 +1,4 @@
-package com.example.bootycall20.a5_3_1_dinner;
+package com.crevas.and.go_5_3_1;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.example.bootycall20.a5_3_1_dinner.FirebaseUtility.mChoicesId;
+import static com.crevas.and.go_5_3_1.FirebaseUtility.mChoicesId;
 
 
 public class FinalOptions extends AppCompatActivity {

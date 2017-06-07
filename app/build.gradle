@@ -12,7 +12,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.bootycall20.a5_3_1_dinner"
+        applicationId "com.crevas.and.go_5_3_1"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
