@@ -3,10 +3,10 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            keyAlias 'PrimaryAndroidKey'
-            keyPassword '531eat'
+            keyAlias 'insert_key_alias'
+            keyPassword 'insert_keystore_password'
             storeFile file('keystore/android.jks')
-            storePassword '531eat'
+            storePassword 'insert_keystore_password'
         }
     }
     compileSdkVersion 25
@@ -27,6 +27,7 @@ android {
         }
         debug {
             signingConfig signingConfigs.config
+            debuggable false
         }
     }
 }
