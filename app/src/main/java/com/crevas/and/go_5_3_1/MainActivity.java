@@ -191,8 +191,6 @@ public class  MainActivity extends AppCompatActivity {
                     name1 = mPlaceName;
                     adress1 = mPlaceAdress;
                     choice1 = new ChoicesDetail(name1, adress1);
-                    Log.v("Places", "Place: " + mPlaceName);
-                    Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice1Clicked = false;
                     isChoice1Filled = true;
                 }
@@ -201,8 +199,6 @@ public class  MainActivity extends AppCompatActivity {
                     name2 = mPlaceName;
                     adress2 = mPlaceAdress;
                     choice2 = new ChoicesDetail(name2, adress2);
-                    Log.v("Places", "Place: " + mPlaceName);
-                    Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice2Clicked = false;
                     isChoice2Filled = true;
                 }
@@ -211,8 +207,6 @@ public class  MainActivity extends AppCompatActivity {
                     name3 = mPlaceName;
                     adress3 = mPlaceAdress;
                     choice3 = new ChoicesDetail(name3, adress3);
-                    Log.v("Places", "Place: " + mPlaceName);
-                    Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice3Clicked = false;
                     isChoice3Filled = true;
                 }
@@ -221,8 +215,6 @@ public class  MainActivity extends AppCompatActivity {
                     name4 = mPlaceName;
                     adress4 = mPlaceAdress;
                     choice4 = new ChoicesDetail(name4, adress4);
-                    Log.v("Places", "Place: " + mPlaceName);
-                    Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice4Clicked = false;
                     isChoice4Filled = true;
                 }
@@ -231,8 +223,6 @@ public class  MainActivity extends AppCompatActivity {
                     name5 = mPlaceName;
                     adress5 = mPlaceAdress;
                     choice5 = new ChoicesDetail(name5, adress5);
-                    Log.v("Places", "Place: " + mPlaceName);
-                    Log.v("Places", "Place: " + mPlaceAdress);
                     isChoice5Clicked = false;
                     isChoice5Filled = true;
                 }
@@ -245,12 +235,9 @@ public class  MainActivity extends AppCompatActivity {
                 isChoice3Clicked = false;
                 isChoice4Clicked = false;
                 isChoice5Clicked = false;
-                Log.v("Places", status.getStatusMessage());
 
             } else if (resultCode == RESULT_CANCELED) {
                 // The user canceled the operation.
-                Log.v("Places", "user cancelled");
-
                 // Mark as not clicked and not filled so user cannot move on to next screen
                 // until text is inputted
 
